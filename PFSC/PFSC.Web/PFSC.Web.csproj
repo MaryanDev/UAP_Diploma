@@ -10,8 +10,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Account\Partials\" />
     <Folder Include="wwwroot\Scripts\libs\jquery\" />
+    <Folder Include="wwwroot\Scripts\pages\account\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PFSC.Entities\PFSC.Entities.csproj" />
+    <ProjectReference Include="..\PFSC.Models\PFSC.Models.csproj" />
+    <ProjectReference Include="..\PFSC.Services\PFSC.Services.csproj" />
   </ItemGroup>
 
 </Project>
