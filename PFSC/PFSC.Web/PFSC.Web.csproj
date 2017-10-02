@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Account\Partials\" />
     <Folder Include="wwwroot\Scripts\libs\jquery\" />
   </ItemGroup>
 
