@@ -5,15 +5,15 @@ using System.Text;
 
 namespace PFSC.Entities.Entites
 {
-    public class FactoryToCategory
+    public class FactoryToProduction
     {
         public int Id { get; set; }
-        public int CategoryId { get; set; }
         public int FactoryId { get; set; }
+        public int PrintingProductionId { get; set; }
 
-        [ForeignKey(nameof(CategoryId))]
-        public Category Category { get; set; }
         [ForeignKey(nameof(FactoryId))]
         public Factory Factory { get; set; }
+        [ForeignKey(nameof(PrintingProductionId))]
+        public PrintingProduction Production { get; set; }
     }
 }

@@ -48,7 +48,13 @@ namespace PFSC.Web
             }
             app.UseStaticFiles();
             app.UseAuthentication();
-            app.UseMvc(routes => routes.MapRoute("default", "{controller}/{action}/{id?}"));
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute("login", "login", defaults: new {controller = "Account", action = "Login"});
+                routes.MapRoute("register", "register", defaults: new {controller = "Account", action = "Register"});
+                routes.MapRoute("search", "search/{criteria?}", defaults: new {controller = "Search", action = "Index"});
+                routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
+            });
         }
     }
 }

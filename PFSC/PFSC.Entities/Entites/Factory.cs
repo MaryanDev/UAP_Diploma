@@ -24,7 +24,8 @@ namespace PFSC.Entities.Entites
         public RegistrationRequest RegistrationRequest { get; set; }
         public ICollection<Rating> Ratings { get; set; }
         public ICollection<Review> Reviews { get; set; }
-        public ICollection<FactoryToCategory> Categories { get; set; }
+        public ICollection<FactoryToTechnology> Technologies { get; set; }
+        public ICollection<FactoryToProduction> Production { get; set; }
         public ICollection<MachineToFactory> MachineModels { get; set; }
         public ICollection<FactoryWorkingHours> WorkingHours { get; set; }
 
@@ -32,9 +33,10 @@ namespace PFSC.Entities.Entites
         {
             Ratings = new List<Rating>();
             Reviews = new List<Review>();
-            Categories = new List<FactoryToCategory>();
+            Technologies = new List<FactoryToTechnology>();
             MachineModels = new List<MachineToFactory>();
             WorkingHours = new List<FactoryWorkingHours>();
+            Production = new List<FactoryToProduction>();
         }
     }
 }

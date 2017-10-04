@@ -17,7 +17,13 @@ namespace PFSC.Entities.PFSC_DBContext
         {
         }
 
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<FactoryWorkingHours> FactoryWorkingHours { get; set; }
+        public DbSet<MachineToFactory> MachinesToFactories { get; set; }
+        public DbSet<RegistrationRequest> RegistrationRequests { get; set; }
+        public DbSet<FactoryToTechnology> FactoryToTechnology { get; set; }
+        public DbSet<FactoryToProduction> FactoryToProduction { get; set; }
+        public DbSet<PrintingTechnology> PrintingTechnologies { get; set; }
+        public DbSet<PrintingProduction> PrintingProductions { get; set; }
         public DbSet<CityDistrict> CityDistricts { get; set; }
         public DbSet<Factory> Factories { get; set; }
         public DbSet<FactoryImage> FactoryImages { get; set; }

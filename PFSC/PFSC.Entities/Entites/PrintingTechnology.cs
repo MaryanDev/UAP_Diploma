@@ -4,17 +4,17 @@ using System.Text;
 
 namespace PFSC.Entities.Entites
 {
-    public class Category
+    public class PrintingTechnology
     {
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
 
-        public ICollection<FactoryToCategory> Factories { get; set; }
+        public ICollection<FactoryToTechnology> Factories { get; set; }
 
-        public Category()
+        public PrintingTechnology()
         {
-            Factories = new List<FactoryToCategory>();
+            Factories = new List<FactoryToTechnology>();
         }
     }
 }
