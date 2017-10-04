@@ -6,6 +6,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\node_modules\**" />
+    <Content Remove="wwwroot\node_modules\**" />
+    <EmbeddedResource Remove="wwwroot\node_modules\**" />
+    <None Remove="wwwroot\node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\src\app\app.component.spec.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
@@ -13,6 +24,21 @@
   <ItemGroup>
     <Folder Include="wwwroot\Scripts\libs\jquery\" />
     <Folder Include="wwwroot\Scripts\pages\account\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\src\app\app.component.js.map" />
+    <None Include="wwwroot\src\app\app.component.ts" />
+    <None Include="wwwroot\src\app\app.module.ts" />
+    <None Include="wwwroot\src\favicon.ico" />
+    <None Include="wwwroot\src\index.html" />
+    <None Include="wwwroot\src\main.js" />
+    <None Include="wwwroot\src\main.js.map" />
+    <None Include="wwwroot\src\main.ts" />
+    <None Include="wwwroot\src\styles.css" />
+    <None Include="wwwroot\src\systemjs-angular-loader.js" />
+    <None Include="wwwroot\src\systemjs.config.extras.js" />
+    <None Include="wwwroot\src\systemjs.config.js" />
   </ItemGroup>
 
   <ItemGroup>
