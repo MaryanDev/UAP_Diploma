@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,12 +10,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PFSC.Entities.PFSC_DBContext;
+using PFSC.Services.Abstract.Security;
+using PFSC.Services.Concrete.Security;
 
 namespace PFSC.Web
 {
     public class Startup
     {
-        private IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
         public Startup(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -25,6 +28,14 @@ namespace PFSC.Web
         {
             services.AddDbContext<PfscDbContext>(
                 options => options.UseSqlServer(_configuration.GetConnectionString("PFSC_Connection")));
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options =>
+            {
+                options.LoginPath = new PathString("/Account/Login");
+                options.ExpireTimeSpan = new TimeSpan(1, 0, 0);
+            });
+
+            services.AddTransient<IPfscAuthenticationService, PfscAuthenticationService>();
             services.AddMvc();
         }
 
@@ -36,6 +47,7 @@ namespace PFSC.Web
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseMvc(routes => routes.MapRoute("default", "{controller}/{action}/{id?}"));
         }
     }

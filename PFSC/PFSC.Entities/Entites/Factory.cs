@@ -17,19 +17,24 @@ namespace PFSC.Entities.Entites
         public int CountOfEmplyees { get; set; }
         public string SiteUrl { get; set; }
         public int DistrictId { get; set; }
+        public bool IsApproved { get; set; }
 
         [ForeignKey(nameof(DistrictId))]
         public CityDistrict District { get; set; }
+        public RegistrationRequest RegistrationRequest { get; set; }
         public ICollection<Rating> Ratings { get; set; }
         public ICollection<Review> Reviews { get; set; }
         public ICollection<FactoryToCategory> Categories { get; set; }
         public ICollection<MachineToFactory> MachineModels { get; set; }
+        public ICollection<FactoryWorkingHours> WorkingHours { get; set; }
+
         public Factory()
         {
             Ratings = new List<Rating>();
             Reviews = new List<Review>();
             Categories = new List<FactoryToCategory>();
             MachineModels = new List<MachineToFactory>();
+            WorkingHours = new List<FactoryWorkingHours>();
         }
     }
 }

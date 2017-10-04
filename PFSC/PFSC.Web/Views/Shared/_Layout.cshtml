@@ -4,8 +4,8 @@
     <link href="~/Content/Styles/site/w3-site.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="~/Content/Styles/bootstrap.css" rel="stylesheet"/>
-    <link href="~/Content/Styles/site/account.css" rel="stylesheet"/>
+    <link href="~/Content/Styles/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Styles/site/account.css" rel="stylesheet" />
 
 
     <style>
@@ -28,6 +28,8 @@
     <script src="~/Scripts/libs/bootstrap/bootstrap.js"></script>
 </head>
 <body>
-    @RenderBody();
+    @{Html.RenderPartial("NavBar");}
+
+    @RenderBody()
 </body>
 </html>

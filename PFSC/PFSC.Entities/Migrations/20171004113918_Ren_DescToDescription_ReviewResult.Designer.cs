@@ -11,9 +11,10 @@ using System;
 namespace PFSC.Entities.Migrations
 {
     [DbContext(typeof(PfscDbContext))]
-    partial class PfscDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171004113918_Ren_DescToDescription_ReviewResult")]
+    partial class Ren_DescToDescription_ReviewResult
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

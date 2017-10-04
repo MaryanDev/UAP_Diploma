@@ -1,4 +1,4 @@
-﻿
+﻿@model PFSC.Models.Security.LoginModel
 <div id="back">
     <div class="backLeft"></div>
 </div>
@@ -10,10 +10,16 @@
                 <h2>Login</h2>
                 <form method="post" asp-action="Login">
                     <div class="form-group">
-                        <input type="text" placeholder="username" />
+                        <input asp-for="LoginName" type="text" placeholder="username" />
+                        <span class="text-danger" asp-validation-for="LoginName"></span>
                     </div>
-                    <button class="off"><a asp-controller="Account" asp-action="Register">Sign Up</a></button>
+                    <div class="form-group">
+                        <input asp-for="Password" type="text" placeholder="username" />
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <a asp-controller="Account" asp-action="Register" class="off btn btn-primary">Sign Up</a>
                     <button id="login" type="submit">Login</button>
+                    @*<div class="danger" asp-validation-summary="All"></div>*@
                 </form>
             </div>
         </div>

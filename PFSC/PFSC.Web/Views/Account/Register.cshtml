@@ -1,4 +1,4 @@
-﻿
+﻿@model PFSC.Models.Security.RegisterModel
 
 <div id="back">
     <div class="backRight"></div>
@@ -11,14 +11,28 @@
                 <h2>Sign Up</h2>
                 <form method="post" asp-action="Register">
                     <div class="form-group">
-                        <input type="text" placeholder="username" />
+                        <input asp-for="Email" placeholder="username" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
                     </div>
-                    <div class="form-group"></div>
-                    <div class="form-group"></div>
-                    <div class="form-group"></div>
+                    <div class="form-group">
+                        <input asp-for="FirstName" placeholder="first name"/>
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="LastName" placeholder="last name"/>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="Password" placeholder="password"/>
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input asp-for="ConfirmPassword" placeholder="confim password"/>
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <a asp-controller="Account" asp-action="Login" class="off btn btn-primary">Login</a>
+                    <button id="signUp" type="submit">Sign up</button>
                 </form>
-                <button class="off"><a asp-controller="Account" asp-action="Login">Login</a></button>
-                <button id="signUp" type="submit">Sign up</button>
             </div>
         </div>
     </div>
