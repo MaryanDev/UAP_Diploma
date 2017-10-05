@@ -5,6 +5,7 @@
     <link href="~/Content/Styles/site/w3-site.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="~/Content/Styles/angular-material.css" rel="stylesheet" />
     <link href="~/Content/Styles/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Styles/site/account.css" rel="stylesheet" />
 
@@ -29,10 +30,18 @@
     <script src="~/Scripts/libs/bootstrap/bootstrap.js"></script> 
     <script src="~/Scripts/libs/angular/angular.js"></script>
     
-    <script src="~/Scripts/pages/app-module/pfsc-app.module.js"></script>
     <script src="~/Scripts/libs/angular/angular-route.js"></script>
     <script src="~/Scripts/libs/angular/Chart.js"></script>
     <script src="~/Scripts/libs/angular/angular-chart.js"></script>
+
+    <script src="~/Scripts/libs/angular/angular-animate.js"></script>
+    <script src="~/Scripts/libs/angular/angular-aria.js"></script>
+    <script src="~/Scripts/libs/angular/angular-messages.js"></script>
+    <script src="~/Scripts/libs/angular/angular-material.min.js"></script>
+
+    <script src="~/Scripts/pages/app-module/pfsc-app.module.js"></script>
+    
+    @RenderSection("HeadScripts", false)
 </head>
 <body ng-app="pfscModule">
     @{Html.RenderPartial("NavBar");}

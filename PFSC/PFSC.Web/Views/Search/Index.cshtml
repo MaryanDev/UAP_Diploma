@@ -1,12 +1,16 @@
 ﻿<!-- Navbar -->
-
 <!-- Sidebar -->
-<script src="~/Scripts/pages/components/searchSidebar.js"></script>
-<script src="~/Scripts/pages/components/searchItem.js"></script>
-<script src="~/Scripts/pages/components/listResultArea.js"></script>
-<script src="~/Scripts/pages/components/pagination.js"></script>
-<script src="~/Scripts/pages/components/searchField.js"></script>
-<script src="~/Scripts/pages/components/searchArea.js"></script>
-<script src="~/Scripts/pages/components/mainSearch.js"></script>
+@section HeadScripts
+{
+    <script src="~/Scripts/pages/config/route-config.js"></script>
+    <script src="~/Scripts/pages/components/searchSidebar.js"></script>
+    <script src="~/Scripts/pages/components/searchItem.js"></script>
+    <script src="~/Scripts/pages/components/listResultArea.js"></script>
+    <script src="~/Scripts/pages/components/pagination.js"></script>
+    <script src="~/Scripts/pages/components/searchField.js"></script>
+    <script src="~/Scripts/pages/components/searchArea.js"></script>
+    <script src="~/Scripts/pages/components/mainSearch.js"></script>
+}
+
 <main-Search></main-Search>
 @{Html.RenderPartial("Footer");}

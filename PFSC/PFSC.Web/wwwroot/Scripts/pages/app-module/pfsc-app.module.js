@@ -1,3 +1,3 @@
 ﻿(function(angular) {
-    var module = angular.module("pfscModule", ["ngRoute", "chart.js"]);
+    var module = angular.module("pfscModule", ["ngRoute", "chart.js", "ngMaterial"]);
 })(angular);
