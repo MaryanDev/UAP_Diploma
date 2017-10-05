@@ -393,7 +393,7 @@ button, input, select, textarea {
 md-autocomplete {
     border-radius: 2px;
     display: block;
-    height: 40px;
+    height: 55px;
     position: relative;
     overflow: visible;
     min-width: 190px
@@ -437,7 +437,7 @@ md-autocomplete {
         box-sizing: border-box;
         position: relative;
         overflow: visible;
-        height: 40px
+        height: 55px
     }
 
         md-autocomplete md-autocomplete-wrap.md-menu-showing {
@@ -500,7 +500,7 @@ md-autocomplete {
                     }
 
     md-autocomplete input:not(.md-input) {
-        font-size: 14px;
+        font-size: 20px;
         box-sizing: border-box;
         border: none;
         box-shadow: none;
@@ -508,8 +508,8 @@ md-autocomplete {
         background: transparent;
         width: 100%;
         padding: 0 15px;
-        line-height: 40px;
-        height: 40px
+        line-height: 55px;
+        height: 55px
     }
 
         md-autocomplete input:not(.md-input)::-ms-clear {
@@ -20838,3 +20838,29 @@ md-tooltip.md-show {
         display: none !important
     }
 }
+
+
+
+.autocomplete-custom-template li {
+    border-bottom: 1px solid #ccc;
+    height: auto;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    white-space: normal;
+}
+
+    .autocomplete-custom-template li:last-child {
+        border-bottom-width: 0;
+    }
+
+.autocomplete-custom-template .item-title,
+.autocomplete-custom-template .item-metadata {
+    display: block;
+    line-height: 2;
+}
+
+    .autocomplete-custom-template .item-title md-icon {
+        height: 18px;
+        width: 18px;
+    }
+
