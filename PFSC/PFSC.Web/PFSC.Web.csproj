@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Scripts\libs\jquery\" />
     <Folder Include="wwwroot\Scripts\pages\account\" />
+    <Folder Include="wwwroot\Scripts\pages\components\" />
   </ItemGroup>
 
   <ItemGroup>
