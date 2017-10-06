@@ -4,7 +4,8 @@
     </form>-->
     <md-content class="col-md-8 col-md-push-2" style="background-color:white;" layout-padding="" layout="column">
         <form ng-submit="$event.preventDefault()">
-            <md-autocomplete md-search-text="$ctrl.searchText" 
+            <md-autocomplete md-selected-item="ctrl.selectedItem"
+                             md-search-text="$ctrl.searchText" 
                              md-items="item in $ctrl.querySearch($ctrl.searchText)" 
                              placeholder="Search..." >
                 <md-item-template>
