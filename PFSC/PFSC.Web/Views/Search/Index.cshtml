@@ -1,17 +1,25 @@
-﻿<!-- Navbar -->
-<!-- Sidebar -->
+﻿
 @section HeadScripts
     {
-    <script src="~/Scripts/pages/config/route-config.js"></script>
-    <script src="~/Scripts/pages/components/searchSidebar.js"></script>
-    <script src="~/Scripts/pages/components/searchItem.js"></script>
-    <script src="~/Scripts/pages/components/listResultArea.js"></script>
-    <script src="~/Scripts/pages/components/pagination.js"></script>
-    <script src="~/Scripts/pages/components/modeSwitcher.js"></script>
-    <script src="~/Scripts/pages/components/searchField.js"></script>
-    <script src="~/Scripts/pages/components/searchArea.js"></script>
-    <script src="~/Scripts/pages/components/mainSearch.js"></script>
+    @*<script src="~/Scripts/pages/config/route-config.js"></script>
+        <script src="~/Scripts/pages/components/searchSidebar.js"></script>
+        <script src="~/Scripts/pages/components/searchItem.js"></script>
+        <script src="~/Scripts/pages/components/listResultArea.js"></script>
+        <script src="~/Scripts/pages/components/pagination.js"></script>
+        <script src="~/Scripts/pages/components/modeSwitcher.js"></script>
+        <script src="~/Scripts/pages/components/searchField.js"></script>
+        <script src="~/Scripts/pages/components/searchArea.js"></script>
+        <script src="~/Scripts/pages/components/mainSearch.js"></script>*@
 }
 
-<main-Search></main-Search>
+<div id="searchApp">
+    <main-search></main-search>
+</div>
+
+@{Html.RenderPartial("/Views/VueComponents/RenderVueTemplates.cshtml");}
 @{Html.RenderPartial("Footer");}
+
+@section FootScripts{
+    @{Html.RenderPartial("/Views/VueComponents/RenderComponentsScripts.cshtml");}
+}
+

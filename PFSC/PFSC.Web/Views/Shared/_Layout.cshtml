@@ -25,30 +25,30 @@
         }
     </style>
 
-    @*<script src="https://code.jquery.com/jquery-2.2.4.min.js"
-            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-            crossorigin="anonymous"></script>*@
     <script src="~/Scripts/libs/jquery/jquery-2.2.4.js"></script>
     <script src="~/Scripts/libs/bootstrap/bootstrap.js"></script> 
-    <script src="~/Scripts/libs/angular/angular.js"></script>
+    @*<script src="~/Scripts/libs/angular/angular.js"></script>*@
     
-    <script src="~/Scripts/libs/angular/angular-route.js"></script>
+    @*<script src="~/Scripts/libs/angular/angular-route.js"></script>
     <script src="~/Scripts/libs/angular/Chart.js"></script>
-    <script src="~/Scripts/libs/angular/angular-chart.js"></script>
+    <script src="~/Scripts/libs/angular/angular-chart.js"></script>*@
 
-    <script src="~/Scripts/libs/angular/angular-animate.js"></script>
+    @*<script src="~/Scripts/libs/angular/angular-animate.js"></script>
     <script src="~/Scripts/libs/angular/angular-aria.js"></script>
     <script src="~/Scripts/libs/angular/angular-messages.js"></script>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
     <script src="~/Scripts/libs/angular/angular-material.min.js"></script>
 
-    <script src="~/Scripts/pages/app-module/pfsc-app.module.js"></script>
-    
+    <script src="~/Scripts/pages/app-module/pfsc-app.module.js"></script>*@
+
+    <script src="~/Scripts/libs/vue/vue.js"></script>
     @RenderSection("HeadScripts", false)
 </head>
-<body ng-app="pfscModule">
+<body>
     @{Html.RenderPartial("NavBar");}
 
     @RenderBody()
+    
+    @RenderSection("FootScripts", false)
 </body>
 </html>
