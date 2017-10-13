@@ -17,12 +17,34 @@
 
   <ItemGroup>
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Compile Remove="ClientApp\app\components\counter\**" />
+    <Compile Remove="ClientApp\app\components\fetchdata\**" />
+    <Compile Remove="ClientApp\app\components\home\**" />
+    <Compile Remove="ClientApp\app\components\navmenu\**" />
     <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="ClientApp\app\components\counter\**" />
+    <EmbeddedResource Remove="ClientApp\app\components\fetchdata\**" />
+    <EmbeddedResource Remove="ClientApp\app\components\home\**" />
+    <EmbeddedResource Remove="ClientApp\app\components\navmenu\**" />
+    <None Remove="ClientApp\app\components\counter\**" />
+    <None Remove="ClientApp\app\components\fetchdata\**" />
+    <None Remove="ClientApp\app\components\home\**" />
+    <None Remove="ClientApp\app\components\navmenu\**" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\PFSC.Entities\PFSC.Entities.csproj" />
     <ProjectReference Include="..\PFSC.Services\PFSC.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\components\listResult\" />
+    <Folder Include="ClientApp\app\components\mapResult\" />
+    <Folder Include="ClientApp\app\components\searchArea\" />
+    <Folder Include="ClientApp\app\components\searchField\" />
+    <Folder Include="ClientApp\app\components\searchItem\" />
+    <Folder Include="ClientApp\app\components\pagination\" />
+    <Folder Include="ClientApp\app\components\searchSidebar\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

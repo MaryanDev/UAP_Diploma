@@ -72,7 +72,7 @@ namespace PFSC_WebUI
 
                 routes.MapSpaFallbackRoute(
                     name: "spa-fallback",
-                    defaults: new { controller = "Home", action = "Index" });
+                    defaults: new { controller = "Search", action = "Index" });
             });
         }
     }

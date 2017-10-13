@@ -1,16 +1,42 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - PFSC_WebUI</title>
-    <base href="~/" />
+    @*<base href="~/" />*@
+    <link href="~/Content/Styles/site/w3-site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    @*<link href="~/Content/Styles/angular-material.css" rel="stylesheet" />*@
+    <link href="~/Content/Styles/bootstrap.css" rel="stylesheet" />
 
+
+    @RenderSection("HeadStyles", false)
+
+    <style>
+        html, body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Roboto", sans-serif;
+        }
+
+        .w3-sidebar {
+            z-index: 3;
+            width: 250px;
+            top: 43px;
+            bottom: 0;
+            height: inherit;
+        }
+    </style>
+    <script src="~/Scripts/libs/jquery/jquery-2.2.4.js"></script>
+    <script src="~/Scripts/libs/bootstrap/bootstrap.js"></script> 
+    @RenderSection("HeadScripts", false)
     <link rel="stylesheet" href="~/dist/vendor.css" asp-append-version="true" />
 </head>
 <body>
+    @{Html.RenderPartial("NavBar");}
+
     @RenderBody()
 
-    @RenderSection("scripts", required: false)
+    @RenderSection("FootScripts", false)
 </body>
 </html>
