@@ -1,12 +1,14 @@
-﻿new Vue({
-    el: "#searchApp",
+﻿
+new Vue({
+    router,
     components: {
-        MainSearch,
+        MainSearch: MainSearch,
         SearchSidebar,
         SearchArea,
         SearchField,
         ModeSwitcher,
         ListResult,
-        SearchItem
+        SearchItem,
+        MapResult
     }
-})
+}).$mount('#searchApp')

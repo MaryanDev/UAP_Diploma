@@ -1,0 +1,9 @@
+﻿<script type="text/x-template" id="mapResultTmpl">
+    <div style="height: 500px;">
+        <v-map :zoom="zoom" :center="center">
+            <v-tilelayer :url="url" :attribution="attribution"></v-tilelayer>
+            <v-marker :lat-lng="markers[0]"></v-marker>
+            <v-marker :lat-lng="markers[1]"></v-marker>
+        </v-map>
+    </div>
+</script>

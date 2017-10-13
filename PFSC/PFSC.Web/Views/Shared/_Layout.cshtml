@@ -5,9 +5,11 @@
     <link href="~/Content/Styles/site/w3-site.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="~/Content/Styles/angular-material.css" rel="stylesheet" />
+    @*<link href="~/Content/Styles/angular-material.css" rel="stylesheet" />*@
     <link href="~/Content/Styles/bootstrap.css" rel="stylesheet" />
-    
+    <link href="~/Content/Styles/vue2-autocomplete.css" rel="stylesheet" />
+
+    <link href="~/Content/Styles/vue-leaflet.css" rel="stylesheet" />
 
     @RenderSection("HeadStyles", false)
 
@@ -40,8 +42,12 @@
     <script src="~/Scripts/libs/angular/angular-material.min.js"></script>
 
     <script src="~/Scripts/pages/app-module/pfsc-app.module.js"></script>*@
-
+    <script src="~/Scripts/libs/leaflet/leaflet.min.js"></script>
+    <script src="~/Scripts/libs/common/common.js"></script>
     <script src="~/Scripts/libs/vue/vue.js"></script>
+    <script src="~/Scripts/libs/vue/vue-router.js"></script>
+    <script src="~/Scripts/libs/vue/vue.leaflet.js"></script>
+
     @RenderSection("HeadScripts", false)
 </head>
 <body>
@@ -50,5 +56,6 @@
     @RenderBody()
     
     @RenderSection("FootScripts", false)
+    
 </body>
 </html>
