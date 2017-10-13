@@ -10,11 +10,11 @@ namespace PFSC.Entities.Entites
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public double Longittude { get; set; }
-        public double Lattitude { get; set; }
-        public DateTime DateCreated { get; set; }
+        public double? Longittude { get; set; }
+        public double? Lattitude { get; set; }
+        public DateTime? DateCreated { get; set; }
         public string Address { get; set; }
-        public int CountOfEmplyees { get; set; }
+        public string CountOfEmplyees { get; set; }
         public string SiteUrl { get; set; }
         public int DistrictId { get; set; }
         public bool IsApproved { get; set; }

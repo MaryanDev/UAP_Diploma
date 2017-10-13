@@ -11,9 +11,10 @@ using System;
 namespace PFSC.Entities.Migrations
 {
     [DbContext(typeof(PfscDbContext))]
-    partial class PfscDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171012135244_FactoryFixes")]
+    partial class FactoryFixes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

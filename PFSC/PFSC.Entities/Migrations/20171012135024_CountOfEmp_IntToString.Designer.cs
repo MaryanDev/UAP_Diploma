@@ -11,9 +11,10 @@ using System;
 namespace PFSC.Entities.Migrations
 {
     [DbContext(typeof(PfscDbContext))]
-    partial class PfscDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171012135024_CountOfEmp_IntToString")]
+    partial class CountOfEmp_IntToString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +42,7 @@ namespace PFSC.Entities.Migrations
 
                     b.Property<string>("CountOfEmplyees");
 
-                    b.Property<DateTime?>("DateCreated");
+                    b.Property<DateTime>("DateCreated");
 
                     b.Property<string>("Description");
 
@@ -49,9 +50,9 @@ namespace PFSC.Entities.Migrations
 
                     b.Property<bool>("IsApproved");
 
-                    b.Property<double?>("Lattitude");
+                    b.Property<double>("Lattitude");
 
-                    b.Property<double?>("Longittude");
+                    b.Property<double>("Longittude");
 
                     b.Property<string>("SiteUrl");
 
