@@ -7,11 +7,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFSC.Web", "PFSC.Web\PFSC.W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFSC.Services", "PFSC.Services\PFSC.Services.csproj", "{6AB1CC6C-C8AB-45C6-9249-272C041CBF6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFSC.Models", "PFSC.Models\PFSC.Models.csproj", "{B2735382-16EF-40D3-AF77-3B94E09A5E87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFSC.Models", "PFSC.Models\PFSC.Models.csproj", "{B2735382-16EF-40D3-AF77-3B94E09A5E87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFSC.Entities", "PFSC.Entities\PFSC.Entities.csproj", "{354ABF6F-E58C-4F21-8339-CC75FB131F70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFSC.Entities", "PFSC.Entities\PFSC.Entities.csproj", "{354ABF6F-E58C-4F21-8339-CC75FB131F70}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PFSC.Database", "PFSC.Database\PFSC.Database.sqlproj", "{AB73EA9A-6779-4677-A6E8-D6C23CEBA955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFSC.WebUI", "PFSC.WebUI\PFSC.WebUI.csproj", "{C5CB192C-68BB-47E7-A71B-93B358A71DF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,10 @@ Global
 		{AB73EA9A-6779-4677-A6E8-D6C23CEBA955}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB73EA9A-6779-4677-A6E8-D6C23CEBA955}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AB73EA9A-6779-4677-A6E8-D6C23CEBA955}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C5CB192C-68BB-47E7-A71B-93B358A71DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5CB192C-68BB-47E7-A71B-93B358A71DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5CB192C-68BB-47E7-A71B-93B358A71DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5CB192C-68BB-47E7-A71B-93B358A71DF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
