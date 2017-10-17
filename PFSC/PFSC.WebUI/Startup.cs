@@ -15,6 +15,8 @@ using PFSC.Services.Abstract.Factory;
 using PFSC.Services.Abstract.Security;
 using PFSC.Services.Concrete.Factory;
 using PFSC.Services.Concrete.Security;
+using PFSC.Services.Concrete.Search;
+using PFSC.Services.Abstract.Search;
 
 namespace PFSC_WebUI
 {
@@ -41,6 +43,7 @@ namespace PFSC_WebUI
 
             services.AddTransient<IPfscAuthenticationService, PfscAuthenticationService>();
             services.AddTransient<IFactoryService, FactoryService>();
+            services.AddTransient<ISearchService, SearchService>();
             services.AddMvc();
         }
 
@@ -70,6 +73,8 @@ namespace PFSC_WebUI
                 routes.MapRoute("login", "login", defaults: new { controller = "Account", action = "Login" });
                 routes.MapRoute("register", "register", defaults: new { controller = "Account", action = "Register" });
                 routes.MapRoute("search", "search/{criteria?}", defaults: new { controller = "Search", action = "Index" });
+                routes.MapRoute("getProduction", "getProduction", defaults: new { controller = "Search", action = "GetProduction" });
+                routes.MapRoute("getTechnologies", "getTechnologies", defaults: new { controller = "Search", action = "GetTechnologies" });
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
 

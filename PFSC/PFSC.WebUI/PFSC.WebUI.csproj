@@ -42,6 +42,7 @@
     <None Remove="ClientApp\app\components\searchSidebar\searchSidebar.component.ts" />
     <None Remove="ClientApp\app\models\printingProduction.ts" />
     <None Remove="ClientApp\app\models\printingTechnology.ts" />
+    <None Remove="ClientApp\app\services\searchAjax.service.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -59,10 +60,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\searchSidebar\searchSidebar.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\printingProduction.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\printingTechnology.ts" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="ClientApp\app\services\" />
+    <TypeScriptCompile Include="ClientApp\app\services\searchAjax.service.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

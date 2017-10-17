@@ -25,8 +25,8 @@ SET IDENTITY_INSERT dbo.PrintingProductions ON
 INSERT INTO dbo.PrintingProductions
 (
 	Id,
-    [Description],
-    Title
+    Title,
+	[Description]
 )
 VALUES 
 (1, N'Газети',  ''),

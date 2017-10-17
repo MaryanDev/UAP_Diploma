@@ -3,42 +3,36 @@
         <i class="fa fa-remove"></i>
     </a>
     <h4 class="w3-bar-item"><b>Menu</b></h4>
-    <div class="w3-bar-item w3-button">
-        <mat-checkbox class="example-margin"
-                      [(ngModel)]="checked"
-                      [(indeterminate)]="indeterminate"
-                      [align]="align"
-                      [disabled]="disabled">
-            Link
-        </mat-checkbox>
-    </div>
-    <div class="w3-bar-item w3-button">
-        <mat-checkbox class="example-margin"
-                      [(ngModel)]="checked"
-                      [(indeterminate)]="indeterminate"
-                      [align]="align"
-                      [disabled]="disabled">
-            Link
-        </mat-checkbox>
-    </div>
-    <div class="w3-bar-item w3-button">
-        <mat-checkbox class="example-margin"
-                      [(ngModel)]="checked"
-                      [(indeterminate)]="indeterminate"
-                      [align]="align"
-                      [disabled]="disabled">
-            Link
-        </mat-checkbox>
-    </div>
-    <div class="w3-bar-item w3-button">
-        <mat-checkbox class="example-margin"
-                      [(ngModel)]="checked"
-                      [(indeterminate)]="indeterminate"
-                      [align]="align"
-                      [disabled]="disabled">
-            Link
-        </mat-checkbox>
-    </div>
+    <mat-list>
+        <h3 mat-subheader>Printing products</h3>
+        <mat-list-item *ngFor="let prod of production" title="{{prod.description}}">
+            <div class="w3-bar-item w3-button">
+                <mat-checkbox mat-line class="example-margin"
+                              [(ngModel)]="prod.isChecked"
+                              [(indeterminate)]="indeterminate"
+                              [align]="align"
+                              [disabled]="disabled">
+                    <span>{{prod.title}}</span>
+                    
+                </mat-checkbox>
+            </div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+
+        <h3 mat-subheader>Priting technologies</h3>
+        <mat-list-item *ngFor="let tech of technologies" title="{{tech.description}}">
+            <div class="w3-bar-item w3-button">
+                <mat-checkbox mat-line class="example-margin"
+                              [(ngModel)]="tech.isChecked"
+                              [(indeterminate)]="indeterminate"
+                              [align]="align"
+                              [disabled]="disabled">
+                    <span>{{tech.title}}</span>
+                    
+                </mat-checkbox>
+            </div>
+        </mat-list-item>
+    </mat-list>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->

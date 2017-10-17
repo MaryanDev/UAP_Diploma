@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-//import { SearchSidebarComponent } from "../searchSidebar/searchSidebar.component"
 
 @Component({
     selector: 'app',
