@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptCompileBlocked Condition="'$(TypeScriptCompileBlocked)' == ''">true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -33,18 +33,28 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\app\components\listResult\listResult.component.ts" />
+    <None Remove="ClientApp\app\components\mapResult\mapResult.component.ts" />
+    <None Remove="ClientApp\app\components\modeSwitcher\modeSwitcher.component.ts" />
+    <None Remove="ClientApp\app\components\searchArea\searchArea.component.ts" />
+    <None Remove="ClientApp\app\components\searchField\searchField.component.ts" />
+    <None Remove="ClientApp\app\components\searchItem\searchItem.component.ts" />
+    <None Remove="ClientApp\app\components\searchSidebar\searchSidebar.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\PFSC.Entities\PFSC.Entities.csproj" />
     <ProjectReference Include="..\PFSC.Services\PFSC.Services.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\app\components\listResult\" />
-    <Folder Include="ClientApp\app\components\mapResult\" />
-    <Folder Include="ClientApp\app\components\searchArea\" />
-    <Folder Include="ClientApp\app\components\searchField\" />
-    <Folder Include="ClientApp\app\components\searchItem\" />
-    <Folder Include="ClientApp\app\components\pagination\" />
-    <Folder Include="ClientApp\app\components\searchSidebar\" />
+    <TypeScriptCompile Include="ClientApp\app\components\listResult\listResult.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\mapResult\mapResult.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\modeSwitcher\modeSwitcher.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\searchArea\searchArea.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\searchField\searchField.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\searchItem\searchItem.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\searchSidebar\searchSidebar.component.ts" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">
