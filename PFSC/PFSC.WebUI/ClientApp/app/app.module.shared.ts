@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {
     MatAutocompleteModule,
     MatButtonModule,
@@ -37,6 +38,8 @@ import {
     MatStepperModule} from '@angular/material';
 import { CdkTableModule } from '@angular/cdk/table';
 
+import { NguiMapModule } from '@ngui/map';
+
 import { AppComponent } from './components/app/app.component';
 import { SearchSidebarComponent } from "./components/searchSidebar/searchSidebar.component";
 import { PaginationComponent } from "./components/pagination/pagination.component";
@@ -46,10 +49,6 @@ import { SearchItemComponent } from "./components/searchItem/searchItem.componen
 import { ListResultComponent } from "./components/listResult/listResult.component";
 import { MapResultComponent } from "./components/mapResult/mapResult.component";
 import { SearchAreaComponent } from "./components/searchArea/searchArea.component";
-//import { NavMenuComponent } from './components/navmenu/navmenu.component';
-//import { HomeComponent } from './components/home/home.component';
-//import { FetchDataComponent } from './components/fetchdata/fetchdata.component';
-//import { CounterComponent } from './components/counter/counter.component';
 
 
 @NgModule({
@@ -67,6 +66,7 @@ import { SearchAreaComponent } from "./components/searchArea/searchArea.componen
     imports: [
         CommonModule,
         //BrowserAnimationsModule,
+        NoopAnimationsModule,
         HttpModule,
         FormsModule,
         ReactiveFormsModule,
@@ -100,14 +100,15 @@ import { SearchAreaComponent } from "./components/searchArea/searchArea.componen
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule,
-        MatStepperModule
-        //RouterModule.forRoot([
-        //    { path: '', redirectTo: 'home', pathMatch: 'full' },
-        //    { path: 'home', component: HomeComponent },
-        //    { path: 'counter', component: CounterComponent },
-        //    { path: 'fetch-data', component: FetchDataComponent },
-        //    { path: '**', redirectTo: 'home' }
-        //])
+        MatStepperModule,
+
+        RouterModule.forRoot([
+            { path: 'listView', component: ListResultComponent },
+            { path: 'mapView', component: MapResultComponent },
+            { path: '**', redirectTo: 'listView' }
+        ]),
+        
+        NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDggJ-GvvJXNII9jccODZ3fKI5cIyW7BMs'})
     ]
 })
 export class AppModuleShared {

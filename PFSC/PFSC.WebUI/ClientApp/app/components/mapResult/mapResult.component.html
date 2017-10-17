@@ -1,3 +1,7 @@
-﻿<div>
-    Map
+﻿<div class="map-container">
+    <ngui-map zoom="14" center="[43.7250, -79.7699]" >
+        <marker *ngFor="let pos of positions"
+                (click)="showInfoWindow($event)"
+                [position]="pos"></marker>
+    </ngui-map>
 </div>

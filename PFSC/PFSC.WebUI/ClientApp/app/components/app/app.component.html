@@ -1,13 +1,11 @@
-<!--<div class='container-fluid'>
-    <div class='row'>
-        <div class='col-sm-3'>-->
-            <!--<nav-menu></nav-menu>-->
-        <!--</div>
-        <div class='col-sm-9 body-content'>-->
-            <!--<router-outlet></router-outlet>-->
-<!--<h1>{{message}}</h1>
+<!--<mat-sidenav-container class="example-sidenav-fab-container">
+    <mat-sidenav #sidenav mode="side" opened="true" style="min-width: 300px;">-->
+        <search-sidebar></search-sidebar>
+<!--</mat-sidenav>
+<button mat-mini-fab class="example-fab" (click)="sidenav.toggle()">
+    <mat-icon>add</mat-icon>
+</button>-->
+<div style="margin-right:20px">
+    <search-area></search-area>
 </div>
-</div>
-</div>-->
-<search-sidebar></search-sidebar>
-<search-area></search-area>
+<!--</mat-sidenav-container>-->
