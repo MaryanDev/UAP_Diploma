@@ -1,4 +1,6 @@
 ﻿import { Component } from '@angular/core';
+import { PrintingProduction } from "../../models/printingProduction";
+import { PrintingTechnology } from "../../models/printingTechnology";
 
 @Component({
     selector: 'search-sidebar',
@@ -9,4 +11,7 @@ export class SearchSidebarComponent {
     indeterminate = false;
     align = 'start';
     disabled = false;
+
+    production: PrintingProduction[];
+    technologies: PrintingTechnology[];
 }

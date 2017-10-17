@@ -11,7 +11,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PFSC.Entities.PFSC_DBContext;
+using PFSC.Services.Abstract.Factory;
 using PFSC.Services.Abstract.Security;
+using PFSC.Services.Concrete.Factory;
 using PFSC.Services.Concrete.Security;
 
 namespace PFSC_WebUI
@@ -38,6 +40,7 @@ namespace PFSC_WebUI
             });
 
             services.AddTransient<IPfscAuthenticationService, PfscAuthenticationService>();
+            services.AddTransient<IFactoryService, FactoryService>();
             services.AddMvc();
         }
 

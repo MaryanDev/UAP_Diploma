@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="SQL Scripts\Insert.sql" />
+    <None Include="SQL Scripts\Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\__EFMigrationsHistory.sql" />

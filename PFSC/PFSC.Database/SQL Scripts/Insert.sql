@@ -9,17 +9,17 @@ SET IDENTITY_INSERT Roles off
 
 SET IDENTITY_INSERT dbo.PrintingTechnologies ON 
 INSERT INTO dbo.PrintingTechnologies (Id, Title, [Description]) VALUES 
-(1, 'Офсетний друк', ''),
-(2, 'Широкоформатний друк', ''),
-(3, 'Трафаретний друк', ''),
-(4, 'Тампонний друк', ''),
-(5, 'Флексогрфія', ''),
-(6, 'Термографія', ''),
-(7, 'Високий друк', ''),
-(8, 'Цифровий друк', ''),
-(9, 'Глибокий друк', ''),
-(10, '3-D друк', '')
-SET IDENTITY_INSERT dbo.Categories OFF
+(1, N'Офсетний друк', ''),
+(2, N'Широкоформатний друк', ''),
+(3, N'Трафаретний друк', ''),
+(4, N'Тампонний друк', ''),
+(5, N'Флексогрфія', ''),
+(6, N'Термографія', ''),
+(7, N'Високий друк', ''),
+(8, N'Цифровий друк', ''),
+(9, N'Глибокий друк', ''),
+(10, N'3-D друк', '')
+SET IDENTITY_INSERT dbo.PrintingTechnologies OFF
 
 SET IDENTITY_INSERT dbo.PrintingProductions ON
 INSERT INTO dbo.PrintingProductions
@@ -29,16 +29,16 @@ INSERT INTO dbo.PrintingProductions
     Title
 )
 VALUES 
-(1, 'Газети',  ''),
-(2, 'Плакати',  ''),
-(3, 'Книги',  ''),
-(4, 'Візитки',  ''),
-(5, 'Бланки',  ''),
-(6, 'Журнали',  ''),
-(7, 'Друк на одязі',  ''),
-(8, 'Друк на пакованнях',  ''),
-(9, 'Виробництво паковань', ''),
-(10, 'Зшивання', '')
+(1, N'Газети',  ''),
+(2, N'Плакати',  ''),
+(3, N'Книги',  ''),
+(4, N'Візитки',  ''),
+(5, N'Бланки',  ''),
+(6, N'Журнали',  ''),
+(7, N'Друк на одязі',  ''),
+(8, N'Друк на пакованнях',  ''),
+(9, N'Виробництво паковань', ''),
+(10, N'Зшивання', '')
 --(11, '', ''),
 --(12, '', ''),
 --(13, '', '')
@@ -50,12 +50,12 @@ INSERT INTO dbo.CityDistricts
 	Id,
     Title
 )
-VALUES (1, 'Галицький'),
-(2, 'Шевченківський'),
-(3, 'Франківський'),
-(4, 'Личаківський'),
-(5, 'Залізничний'),
-(6, 'Сихівський')
+VALUES (1, N'Галицький'),
+(2, N'Шевченківський'),
+(3, N'Франківський'),
+(4, N'Личаківський'),
+(5, N'Залізничний'),
+(6, N'Сихівський')
 SET IDENTITY_INSERT dbo.CityDistricts OFF
 
 SET IDENTITY_INSERT dbo.Users ON
@@ -121,7 +121,7 @@ VALUES
 (4, 'USA', '', 'MOSS'),
 (5, 'Germany', '', 'Leibinger'),
 (6, 'Japan','','HITACHI Industrial Components & Equipment '),
-(7, 'Denmark', 'Heidelberger Druckmaschinen AG'),
+(7, 'Denmark', '', 'Heidelberger Druckmaschinen AG'),
 (8, 'Italy','', 'Giugni S.r.l.'),
 (9, 'Spain', '', 'Domino')
 SET IDENTITY_INSERT dbo.MachineManufacturers OFF
@@ -161,12 +161,12 @@ INSERT INTO dbo.ReviewResults
     [Description]
 )
 VALUES
-(1, 'Відмінно', ''),
-(2, 'Добре', ''),
-(3, 'Задовільно', ''),
-(4, 'Незадовільно', ''),
-(5, 'Погано', ''),
-(6, 'Дуже погано', '')
+(1, N'Відмінно', ''),
+(2, N'Добре', ''),
+(3, N'Задовільно', ''),
+(4, N'Незадовільно', ''),
+(5, N'Погано', ''),
+(6, N'Дуже погано', '')
 SET IDENTITY_INSERT dbo.ReviewResults OFF
 
 SET IDENTITY_INSERT dbo.Factories ON
@@ -185,7 +185,7 @@ INSERT INTO dbo.Factories
     IsApproved
 )
 VALUES
-(1, 'м. Львів, вул. Стрийська, 202', '22-50', NULL,  'Продукція, послуги:
+(1, N'м. Львів, вул. Стрийська, 202', '22-50', NULL,  N'Продукція, послуги:
 
 Офсетний друк, рекламні матеріали, друк каталогів, євробуклетів, флаєрів, виготовлення коробок, коробки з мікрогофри, паперові пакети, друк фірмових бланків, буклетів, презентації, книги, газети, журнали, ресторанні меню, запрошення, друк календарів, постерів, плакатів, брошури тощо.
 
@@ -222,8 +222,8 @@ VALUES
 • При замовленні друку передоплата 30%
 • Друкуємо тиражі в 2 рази швидше
 • Доставка будь – яке місто Західної України
-• Доставимо під самі двері', 1, NULL, NULL, 'www.media.biz.ua', 'ПРАЙД МЕДІА, ТОВ', 1),
-(2, 'м. Львів, вул. Сахарова, 82, оф. 9', '30-40', NULL, 'Галузі по КВЕД:
+• Доставимо під самі двері', 1, NULL, NULL, 'www.media.biz.ua', N'ПРАЙД МЕДІА, ТОВ', 1),
+(2, N'м. Львів, вул. Сахарова, 82, оф. 9', '30-40', NULL, N'Галузі по КВЕД:
 
 Виробництво виробів з паперу та картону
 Видання книг
@@ -240,8 +240,8 @@ VALUES
 - мінімальний тираж 20 прим.
 - при тиражі понад 300 прим. - Знижки !!!
 
-Всі види післядрукарської обробки: порізка, біговка, ламінування, перфорація, скріплення скобами та на пружину.', 2, NULL, NULL, 'www.cifradruk.com.ua', 'ЛЬВІВСЬКА ЦИФРОВА ДРУКАРНЯ, ТОВ', 1),
-(3, 'м. Львів, вул. Наукова, 5', NULL, NULL, 'Продукція, послуги:
+Всі види післядрукарської обробки: порізка, біговка, ламінування, перфорація, скріплення скобами та на пружину.', 2, NULL, NULL, 'www.cifradruk.com.ua', N'ЛЬВІВСЬКА ЦИФРОВА ДРУКАРНЯ, ТОВ', 1),
+(3, N'м. Львів, вул. Наукова, 5', NULL, NULL, N'Продукція, послуги:
 
 - Видавничі послуги: від рукопису – до книги; наклад - від 1-го примірника; верстка; художнє оформлення.
 - Поліграфічні послуги: листовий друк до А2 формату;
@@ -253,8 +253,8 @@ VALUES
 
 Рекламна інформація:
 
-«Видавництво «Бона» видає та виготовляє літературу найрізноманітнішої тематики – як художню, для масового читача, так і тематичну. Видавництво також здійснює випуск книг за замовленням авторів: надає редакційно-видавничі послуги (набір, верстка, редагування, художнє оформлення, виготовлення оригінал-макетів, тощо).', 3, NULL, NULL, 'www.bona-kr.lviv.ua', 'БОНА, ВИДАВНИЦТВО, ПП', 1),
-(4, 'м. Львів, вул. Городоцька, 282', '15-20', NULL, 'Галузі по КВЕД:
+«Видавництво «Бона» видає та виготовляє літературу найрізноманітнішої тематики – як художню, для масового читача, так і тематичну. Видавництво також здійснює випуск книг за замовленням авторів: надає редакційно-видавничі послуги (набір, верстка, редагування, художнє оформлення, виготовлення оригінал-макетів, тощо).', 3, NULL, NULL, 'www.bona-kr.lviv.ua', N'БОНА, ВИДАВНИЦТВО, ПП', 1),
+(4, N'м. Львів, вул. Городоцька, 282', '15-20', NULL, N'Галузі по КВЕД:
 
 Виробництво інших виробів з паперу та картону
 Брошурувально-палітурна та оздоблювальна діяльність
@@ -272,8 +272,8 @@ VALUES
 - друк на термозбіжних рукавах;
 - цифровий друк малих тиражів;
 - складні імітації дорогих винних паперів;
-- металеві етикетки.', 3, NULL, NULL, 'www.sp-ekko.com.ua', 'ЕККО, ТОВ', 1),
-(5, 'м. Львів, просп. Чорновола, 45а корп. 8', NULL, NULL,'Галузі по КВЕД:
+- металеві етикетки.', 3, NULL, NULL, 'www.sp-ekko.com.ua', N'ЕККО, ТОВ', 1),
+(5, N'м. Львів, просп. Чорновола, 45а корп. 8', NULL, NULL,N'Галузі по КВЕД:
 
 Інша поліграфічна діяльність
 Консультування з питань інформатизації
@@ -303,8 +303,8 @@ VALUES
 - Друк на сувенірній продукції
 - Реклама на телебаченні
 - Широкоформатний друк
-- Вебдизайн та розробка веб-сайтів', 2, NULL, NULL, 'www.leosvit.com', 'ЛЕОСВІТ, РЕКЛАМНА КОМПАНІЯ', 1),
-(6, ' м. Львів, пл. Петрушевича, 2, оф. 225', NULL, NULL, 'Галузі по КВЕД:
+- Вебдизайн та розробка веб-сайтів', 2, NULL, NULL, 'www.leosvit.com', N'ЛЕОСВІТ, РЕКЛАМНА КОМПАНІЯ', 1),
+(6, N'м. Львів, пл. Петрушевича, 2, оф. 225', NULL, NULL, N'Галузі по КВЕД:
 
 Інша поліграфічна діяльність
 Рекламна діяльність
@@ -329,8 +329,8 @@ VALUES
 
 «Art&Pro» дарує Вам час та спокій. Вас перестануть турбувати питання, де замовити візитки чи обклеїти вітрину, як це оплатити та доставити. Адже рекламна агенція повного циклу – це дуже зручно. Ми зробимо все за Вас!
 
-Працюйте з експертами у своїй справі. В нас більше 6 років досвіду на ринку реклами. Перевірені часом методи та підходи дозволять нам з впевненістю говорити про свою професійність. Звісно, дорога до досконалості була не без помилок і ще не завершена, але ми прагнемо до ідеалу та бажаємо досягти його кожному. На базі колишньої рекламної агенції ”Простір”, відтепер ”Art&Pro”, ми створюємо нові стратегії, ідеї та конструктивні рішення, вдосконалюючи їх і себе щодня!”', 1, NULL, NULL, 'www.artpro.agency', 'ART&PRO', 1),
-(7, 'м. Львів, вул. Володимира Великого, 2', NULL, NULL, 'Галузі по КВЕД:
+Працюйте з експертами у своїй справі. В нас більше 6 років досвіду на ринку реклами. Перевірені часом методи та підходи дозволять нам з впевненістю говорити про свою професійність. Звісно, дорога до досконалості була не без помилок і ще не завершена, але ми прагнемо до ідеалу та бажаємо досягти його кожному. На базі колишньої рекламної агенції ”Простір”, відтепер ”Art&Pro”, ми створюємо нові стратегії, ідеї та конструктивні рішення, вдосконалюючи їх і себе щодня!”', 1, NULL, NULL, 'www.artpro.agency', N'ART&PRO', 1),
+(7, N'м. Львів, вул. Володимира Великого, 2', NULL, NULL, N'Галузі по КВЕД:
 
 Інша поліграфічна діяльність
 Брошурувально-палітурна та оздоблювальна діяльність
@@ -349,13 +349,13 @@ VALUES
 - ціни виробника;
 - висока якість друку;
 - оперативність;
-- індивідуальний підхід до кожного клієнта', 4, NULL, NULL, 'www.levko.com.ua', 'ЛЕВКО, ДРУКАРНЯ', 1)
+- індивідуальний підхід до кожного клієнта', 4, NULL, NULL, 'www.levko.com.ua', N'ЛЕВКО, ДРУКАРНЯ', 1)
 SET IDENTITY_INSERT dbo.Factories OFF
 
 SET IDENTITY_INSERT dbo.Reviews ON
-insert into Reviews (Id, DateCreated, FactoryId, ReviewResultId, [[Text]], Title, UserId) values (1, '2014-05-01', 1, 6, 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
+insert into Reviews (Id, DateCreated, FactoryId, ReviewResultId, [Text], Title, UserId) values (1, '2014-05-01', 1, 6, 'Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.
 
-In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.', 'montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum neque aenean auctor gravida sem praesent id', 16);
+In sagittis dui vel n', 'posuere metus vitae ipsum.', 16);
 insert into Reviews (Id, DateCreated, FactoryId, ReviewResultId, [Text], Title, UserId) values (2, '2017-01-19', 5, 2, 'Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.
 
 Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.
@@ -420,6 +420,273 @@ Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condim
 
 Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.', 'ut erat id mauris vulputate elementum nullam varius nulla facilisi cras non velit nec', 14);
 SET IDENTITY_INSERT dbo.Reviews OFF
+
+
+SET IDENTITY_INSERT dbo.Ratings ON
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (1, 2, 3, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (2, 5, 5, 1);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (3, 1, 2, 12);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (4, 5, 4, 23);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (5, 7, 3, 25);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (6, 6, 1, 24);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (7, 2, 5, 17);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (8, 6, 2, 29);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (9, 1, 3, 29);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (10, 6, 4, 8);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (11, 2, 4, 13);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (12, 2, 1, 14);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (13, 2, 2, 6);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (14, 4, 2, 1);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (15,7, 4, 8);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (16, 2, 2, 22);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (17, 2, 4, 14);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (18, 2, 3, 26);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (19, 1, 5, 30);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (20, 1, 1, 24);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (21, 2, 4, 1);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (22, 6, 2, 10);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (23, 6, 4, 10);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (24, 4, 5, 11);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (25, 6, 3, 14);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (26, 6, 3, 15);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (27, 5, 4, 10);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (28, 4, 2, 18);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (29, 5, 4, 25);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (30, 3, 2, 1);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (31, 7, 5, 4);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (32, 5, 5, 2);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (33, 4, 3, 14);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (34, 5, 3, 29);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (35, 4, 5, 26);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (36, 2, 4, 24);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (37, 5, 5, 9);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (38, 6, 5, 18);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (39, 3, 2, 26);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (40, 2, 4, 21);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (41, 3, 3, 30);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (42, 2, 4, 8);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (43, 1, 5, 27);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (44, 4, 2, 2);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (45, 4, 1, 4);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (46, 1, 2, 25);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (47, 5, 5, 10);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (48, 7, 5, 7);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (49, 3, 1, 28);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (50, 7, 4, 19);
+SET IDENTITY_INSERT dbo.Ratings OFF
+
+
+SET IDENTITY_INSERT dbo.MachinesToFactories ON
+
+
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (1, 1, 15);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (2, 5, 15);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (3, 2, 7);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (4, 1, 2);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (5, 5, 16);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (6, 4, 6);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (7, 3, 14);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (8, 5, 8);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (9, 4, 14);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (10, 7, 13);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (11, 7, 6);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (12, 2, 15);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (13, 3, 12);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (14, 4, 15);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (15, 1, 14);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (16, 7, 16);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (17, 2, 7);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (18, 5, 5);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (19, 6, 10);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (20, 5, 4);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (21, 3, 6);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (22, 4, 1);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (23, 5, 1);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (24, 3, 16);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (25, 1, 1);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (26, 7, 15);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (27, 5, 11);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (28, 4, 11);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (29, 5, 1);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (30, 7, 8);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (31, 5, 1);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (32, 5, 6);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (33, 5, 11);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (34, 4, 11);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (35, 7, 2);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (36, 6, 1);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (37, 7, 2);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (38, 7, 3);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (39, 7, 11);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (40, 6, 6);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (41, 6, 11);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (42, 4, 4);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (43, 7, 5);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (44, 3, 3);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (45, 4, 9);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (46, 6, 10);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (47, 5, 6);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (48, 7, 6);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (49, 7, 8);
+insert into MachinesToFactories (Id, FactoryId, MachineId) values (50, 4, 15);
+
+SET IDENTITY_INSERT dbo.MachinesToFactories OFF
+
+
+SET IDENTITY_INSERT dbo.FactoryToTechnology ON
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (1, 1, 2);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (2, 5, 4);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (3, 10, 6);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (4, 9, 3);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (5, 4, 2);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (6, 6, 1);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (7, 8, 3);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (8, 4, 3);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (9, 4, 2);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (10, 10, 6);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (11, 3, 3);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (12, 8, 3);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (13, 2, 7);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (14, 5, 6);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (15, 4, 1);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (16, 5, 5);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (17, 8, 7);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (18, 5, 2);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (19, 10, 2);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (20, 9, 4);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (21, 10, 7);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (22, 5, 3);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (23, 10, 7);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (24, 1, 3);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (25, 9, 6);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (26, 7, 7);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (27, 8, 5);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (28, 6, 7);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (29, 9, 2);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (30, 6, 4);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (31, 3, 5);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (32, 7, 4);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (33, 1, 2);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (34, 1, 1);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (35, 1, 3);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (36, 5, 4);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (37, 1, 3);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (38, 3, 4);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (39, 8, 2);
+insert into FactoryToTechnology (Id, CategoryId, FactoryId) values (40, 5, 5);
+SET IDENTITY_INSERT dbo.FactoryToTechnology OFF
+
+SET IDENTITY_INSERT dbo.FactoryToProduction ON
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (1, 5, 7);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (2, 3, 10);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (3, 4, 1);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (4, 6, 8);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (5, 6, 1);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (6, 4, 2);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (7, 5, 6);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (8, 6, 8);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (9, 7, 7);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (10, 5, 5);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (11, 3, 7);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (12, 5, 5);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (13, 3, 5);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (14, 1, 8);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (15, 1, 8);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (16, 2, 1);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (17, 1, 3);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (18, 7, 9);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (19, 1, 7);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (20, 5, 5);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (21, 4, 3);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (22, 6, 2);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (23, 3, 9);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (24, 3, 3);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (25, 5, 6);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (26, 4, 6);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (27, 1, 7);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (28, 1, 1);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (29, 3, 10);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (30, 3, 9);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (31, 4, 8);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (32, 4, 10);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (33, 2, 7);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (34, 3, 5);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (35, 5, 2);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (36, 6, 6);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (37, 2, 2);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (38, 5, 6);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (39, 6, 5);
+insert into FactoryToProduction (Id, FactoryId, PrintingProductionId) values (40, 4, 5);
+SET IDENTITY_INSERT dbo.FactoryToProduction OFF
+
+SET IDENTITY_INSERT dbo.FactoryWorkingHours ON
+INSERT INTO dbo.FactoryWorkingHours
+(
+	Id,
+    [DayOfWeek],
+    FactoryId,
+    FromTime,
+    ToTime
+)
+VALUES (1, 1, 1, '08-00', '18-00'),
+(2, 2, 1, '08-00', '18-00'),
+(3, 3, 1, '08-00', '18-00'),
+(4, 4, 1, '08-00', '18-00'),
+(5, 5, 1, '08-00', '18-00'),
+(6, 6, 1, '08-00', '18-00'),
+(7, 7, 1, NULL, NULL),
+
+(8, 1, 2, '08-00', '18-00'),
+(9, 2, 2, '08-00', '18-00'),
+(10, 3, 2, '08-00', '18-00'),
+(11, 4, 2, '08-00', '18-00'),
+(12, 5, 2, '08-00', '18-00'),
+(13, 6, 2, '08-00', '18-00'),
+(14, 7, 2, NULL, NULL),
+
+(15, 1, 3, '08-00', '18-00'),
+(16, 2, 3, '08-00', '18-00'),
+(17, 3, 3, '08-00', '18-00'),
+(18, 4, 3, '08-00', '18-00'),
+(19, 5, 3, '08-00', '18-00'),
+(20, 6, 3, '08-00', '18-00'),
+(21, 7, 3, NULL, NULL),
+
+(22, 1, 4, '08-00', '18-00'),
+(23, 2, 4, '08-00', '18-00'),
+(24, 3, 4, '08-00', '18-00'),
+(25, 4, 4, '08-00', '18-00'),
+(26, 5, 4, '08-00', '18-00'),
+(27, 6, 4, '08-00', '18-00'),
+(28, 7, 4, NULL, NULL),
+
+(29, 1, 5, '08-00', '18-00'),
+(30, 2, 5, '08-00', '18-00'),
+(31, 3, 5, '08-00', '18-00'),
+(32, 4, 5, '08-00', '18-00'),
+(33, 5, 5, '08-00', '18-00'),
+(34, 6, 5, '08-00', '18-00'),
+(35, 7, 5, NULL, NULL),
+
+(36, 1, 6, '08-00', '18-00'),
+(37, 2, 6, '08-00', '18-00'),
+(38, 3, 6, '08-00', '18-00'),
+(39, 4, 6, '08-00', '18-00'),
+(40, 5, 6, '08-00', '18-00'),
+(41, 6, 6, '08-00', '18-00'),
+(42, 7, 6, NULL, NULL),
+
+(43, 1, 7, '08-00', '18-00'),
+(44, 2, 7, '08-00', '18-00'),
+(45, 3, 7, '08-00', '18-00'),
+(46, 4, 7, '08-00', '18-00'),
+(47, 5, 7, '08-00', '18-00'),
+(48, 6, 7, '08-00', '18-00'),
+(49, 7, 7, NULL, NULL)
+SET IDENTITY_INSERT dbo.FactoryWorkingHours OFF
+
+
+
 
 
 

@@ -1,3 +1,4 @@
+@model IEnumerable<PFSC.Models.Home.TopRatedFactoryInfo>
 @{
     ViewData["Title"] = "Home Page";
 }
@@ -11,7 +12,7 @@
 @{Html.RenderPartial("Header");}
 <div class="w3-content w3-padding" style="max-width:1564px">
 
-    @{Html.RenderPartial("TopRated");}
+    @{Html.RenderPartial("TopRated", Model);}
 
     @{Html.RenderPartial("About");}
 

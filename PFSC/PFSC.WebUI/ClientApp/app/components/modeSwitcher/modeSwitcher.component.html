@@ -1,5 +1,5 @@
 ﻿
 <div class="btn-group">
-    <a class="btn btn-default" [routerLink]="['/listView']">List</a>
-    <a class="btn btn-default" [routerLink]="['/mapView']">Map</a>
+    <a class="btn btn-default" (click)="onListClick()" [class.active]="isListLinkActive" [routerLink]="['/listView']">List</a>
+    <a class="btn btn-default" (click)="onMapClick()" [class.active]="isMapLinkActive" [routerLink]="['/mapView']">Map</a>
 </div>

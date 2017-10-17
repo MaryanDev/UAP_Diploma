@@ -8,7 +8,7 @@ namespace PFSC.WebUI.Controllers
 {
     public class SearchController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(int param = 0)
         {
             return View();
         }

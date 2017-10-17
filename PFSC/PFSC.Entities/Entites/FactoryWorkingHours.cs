@@ -10,8 +10,8 @@ namespace PFSC.Entities.Entites
         public int Id { get; set; }
         public int FactoryId { get; set; }
         public byte DayOfWeek { get; set; }
-        public DateTime FromTime { get; set; }
-        public DateTime ToTime { get; set; }
+        public string FromTime { get; set; }
+        public string ToTime { get; set; }
 
         [ForeignKey(nameof(FactoryId))]
         public Factory Factory { get; set; }
