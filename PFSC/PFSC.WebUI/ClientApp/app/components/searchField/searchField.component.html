@@ -1,21 +1,17 @@
 ﻿<div class="row">
-    <form class="col-md-4 col-md-push-4 example-form">
-        <mat-form-field  class="example-full-width">
-            <input matInput placeholder="State" aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
+    <form class="col-md-6 col-md-push-3">
+        <!--<mat-form-field  class="example-full-width">
+            <input matInput placeholder="Пошук" aria-label="State" [matAutocomplete]="auto" [formControl]="factoryCtrl">
             <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let state of filteredStates | async" [value]="state.name">
-                    <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" />
-                    <span>{{ state.name }}</span> |
-                    <small>Population: {{state.population}}</small>
+                <mat-option *ngFor="let fact of filteredFactories | async" [value]="fact.name">
+                    <img style="vertical-align:middle;" aria-hidden src="{{fact.flag}}" height="25" />
+                    <span>{{ fact.name }}</span> |
+                    <small>Population: {{fact.population}}</small>
                 </mat-option>
-            </mat-autocomplete>
-        </mat-form-field>
-        <!--<br/>
-        <mat-slide-toggle [checked]="stateCtrl.disabled"
-                          (change)="stateCtrl.disabled ? stateCtrl.enable() : stateCtrl.disable()">
-            Disable Input?
-        </mat-slide-toggle>-->
 
+        </mat-form-field>-->
+        <input type="text" placeholder="Пошук" class="factory-search" (blur)="hideAutocomplete=true" (click)="hideAutocomplete=false" (input)="onSearchChange($event.target.value)" />
+            <div style="z-index: 1000; position: absolute" id="autcompleteData" [hidden]="hideAutocomplete" [innerHTML]="filteredFactories"></div>
     </form>
 
 </div>

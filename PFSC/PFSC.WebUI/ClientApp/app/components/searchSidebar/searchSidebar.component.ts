@@ -1,13 +1,13 @@
-﻿import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
+﻿import { Component, OnInit, Input } from '@angular/core';
+//import { Http, Response } from '@angular/http';
 import { PrintingProduction } from "../../models/printingProduction";
 import { PrintingTechnology } from "../../models/printingTechnology";
-import { SearchService } from '../../services/searchAjax.service'
+//import { SearchService } from '../../services/searchAjax.service'
 
 @Component({
     selector: 'search-sidebar',
     templateUrl: './searchSidebar.component.html',
-    providers: [SearchService]
+    //providers: [SearchService]
 })
 export class SearchSidebarComponent {
     checked = false;
@@ -15,22 +15,24 @@ export class SearchSidebarComponent {
     align = 'start';
     disabled = false;
 
-    production: PrintingProduction[];
-    technologies: PrintingTechnology[];
+    @Input()
+    productionList: PrintingProduction[];
+    @Input()
+    technologyList: PrintingTechnology[];
 
-    constructor(private searchService: SearchService) {
+    //constructor(private searchService: SearchService) {
 
-    }
+    //}
 
-    ngOnInit() {
-        this.searchService.getProduction().subscribe((data: Response) => {
-            console.log(data.json());
-            this.production = data.json();
-        });
+    //ngOnInit() {
+    //    this.searchService.getProduction().subscribe((data: Response) => {
+    //        console.log(data.json());
+    //        this.production = data.json();
+    //    });
 
-        this.searchService.getTechnologies().subscribe((data: Response) => {
-            console.log(data.json());
-            this.technologies = data.json();
-        });
-    }
+    //    this.searchService.getTechnologies().subscribe((data: Response) => {
+    //        console.log(data.json());
+    //        this.technologies = data.json();
+    //    });
+    //}
 }

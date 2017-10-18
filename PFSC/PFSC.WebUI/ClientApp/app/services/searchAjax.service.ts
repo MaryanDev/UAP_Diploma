@@ -8,16 +8,20 @@ export class SearchService {
     constructor(private http: Http) { }
 
     getProduction() {
-        return this.http.get('getProduction')
+        return this.http.get('getProduction');
         //    .map((response) => {
         //    return response.json()
         //});
     }
     getTechnologies() {
-        return this.http.get('getTechnologies')
+        return this.http.get('getTechnologies');
         //    .map((response) => {
         //    return response.json()
         //});
+    }
+
+    getFactoriesForAutocomplete(searchCriteria: string) {
+        return this.http.get(`factoriesForAutocomplete/${searchCriteria}`);
     }
 
 

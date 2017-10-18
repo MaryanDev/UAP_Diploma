@@ -4,61 +4,45 @@
     </a>
     <h4 class="w3-bar-item"><b>Menu</b></h4>
     <mat-list>
-        <h3 mat-subheader>Printing products</h3>
-        <mat-list-item *ngFor="let prod of production" title="{{prod.description}}">
-            <div class="w3-bar-item w3-button">
-                <mat-checkbox mat-line class="example-margin"
-                              [(ngModel)]="prod.isChecked"
-                              [(indeterminate)]="indeterminate"
-                              [align]="align"
-                              [disabled]="disabled">
-                    <span>{{prod.title}}</span>
-                    
-                </mat-checkbox>
-            </div>
-        </mat-list-item>
-        <mat-divider></mat-divider>
+        <div class="accordion">
+            <h3 mat-subheader>Printing products</h3>
+            <div>
+                <mat-list-item *ngFor="let prod of productionList" title="{{prod.description}}">
+                    <div class="w3-bar-item w3-button">
+                        <mat-checkbox mat-line class="example-margin"
+                                      [(ngModel)]="prod.isChecked"
+                                      [(indeterminate)]="indeterminate"
+                                      [align]="align"
+                                      [disabled]="disabled">
+                            <span>{{prod.title}}</span>
 
-        <h3 mat-subheader>Priting technologies</h3>
-        <mat-list-item *ngFor="let tech of technologies" title="{{tech.description}}">
-            <div class="w3-bar-item w3-button">
-                <mat-checkbox mat-line class="example-margin"
-                              [(ngModel)]="tech.isChecked"
-                              [(indeterminate)]="indeterminate"
-                              [align]="align"
-                              [disabled]="disabled">
-                    <span>{{tech.title}}</span>
-                    
-                </mat-checkbox>
+                        </mat-checkbox>
+                    </div>
+                </mat-list-item>
             </div>
-        </mat-list-item>
+        </div>
+        <!--<mat-divider></mat-divider>-->
+        
+        <div class="accordion">
+            <h3 mat-subheader>Priting technologies</h3>
+            <div>
+                <mat-list-item *ngFor="let tech of technologyList" title="{{tech.description}}">
+                    <div class="w3-bar-item w3-button">
+                        <mat-checkbox mat-line class="example-margin"
+                                      [(ngModel)]="tech.isChecked"
+                                      [(indeterminate)]="indeterminate"
+                                      [align]="align"
+                                      [disabled]="disabled">
+                            <span>{{tech.title}}</span>
+
+                        </mat-checkbox>
+                    </div>
+                </mat-list-item>
+            </div>
+        </div>
     </mat-list>
 </nav>
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<script>
-    // Get the Sidebar
-    var mySidebar = document.getElementById("mySidebar");
-
-    // Get the DIV with overlay effect
-    var overlayBg = document.getElementById("myOverlay");
-
-    // Toggle between showing and hiding the sidebar, and add overlay effect
-    function w3_open() {
-        if (mySidebar.style.display === 'block') {
-            mySidebar.style.display = 'none';
-            overlayBg.style.display = "none";
-        } else {
-            mySidebar.style.display = 'block';
-            overlayBg.style.display = "block";
-        }
-    }
-
-    // Close the sidebar with the close button
-    function w3_close() {
-        mySidebar.style.display = "none";
-        overlayBg.style.display = "none";
-    }
-</script>

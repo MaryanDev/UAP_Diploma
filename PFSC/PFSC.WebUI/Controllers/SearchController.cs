@@ -31,5 +31,11 @@ namespace PFSC.WebUI.Controllers
         {
             return Json(_searchService.GetTechnologies());
         }
+
+        public ActionResult FactoriesForAutocomplete(string searchCriteria)
+        {
+            var matchedFactories = _searchService.SearchFactoriesShort(searchCriteria);
+            return PartialView(matchedFactories);
+        }
     }
 }

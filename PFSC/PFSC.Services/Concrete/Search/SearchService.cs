@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using PFSC.Entities.Entites;
 using PFSC.Models.Search;
 
@@ -35,6 +36,19 @@ namespace PFSC.Services.Concrete.Search
                 Title = t.Title,
                 Description = t.Description
             }).ToList();
+        }
+
+        public List<FactoryShortModel> SearchFactoriesShort(string searchQuery)
+        {
+            return _context.Factories.Include(f => f.FactoryImages)
+                .Where(f => f.Title.Contains(searchQuery) || f.Address.Contains(searchQuery))
+                .Select(f => new FactoryShortModel
+                {
+                    Id = f.Id,
+                    Title = f.Title,
+                    Address = f.Address,
+                    Avatar = f.FactoryImages.FirstOrDefault().Path
+                }).ToList();
         }
     }
 }

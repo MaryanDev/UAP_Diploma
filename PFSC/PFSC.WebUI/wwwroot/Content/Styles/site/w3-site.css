@@ -3,6 +3,14 @@ html {
     box-sizing: border-box
 }
 
+.autcompleteSection {
+    background-color: bisque;
+}
+
+    .autcompleteSection .row {
+        margin-top: 15px;
+    }
+
 *, *:before, *:after {
     box-sizing: inherit
 }

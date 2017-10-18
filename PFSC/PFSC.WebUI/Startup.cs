@@ -75,6 +75,8 @@ namespace PFSC_WebUI
                 routes.MapRoute("search", "search/{criteria?}", defaults: new { controller = "Search", action = "Index" });
                 routes.MapRoute("getProduction", "getProduction", defaults: new { controller = "Search", action = "GetProduction" });
                 routes.MapRoute("getTechnologies", "getTechnologies", defaults: new { controller = "Search", action = "GetTechnologies" });
+                routes.MapRoute("factoriesForAutocomplete", "factoriesForAutocomplete/{searchCriteria}",
+                    defaults: new {controller = "Search", action = "FactoriesForAutocomplete", searchCriteria = string.Empty });
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
 
 

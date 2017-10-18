@@ -7,3 +7,17 @@
 .example-full-width {
     width: 100%;
 }
+.factory-search {
+    width: 100%;
+    height: 50px;
+    font-size: 14pt;
+    padding: 10px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+.autcompleteSection {
+    background-color: bisque;
+}
+.autcompleteSection .row {
+    margin-top: 15px;
+}
