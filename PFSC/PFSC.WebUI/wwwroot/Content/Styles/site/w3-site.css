@@ -4,11 +4,18 @@ html {
 }
 
 .autcompleteSection {
-    background-color: bisque;
+    background-color: #f0f0f0 !important;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 4px;
 }
 
-    .autcompleteSection .row {
+    .autcompleteSection :not(:first-child) {
         margin-top: 15px;
+    }
+    .autcompleteSection .row:hover {
+        background-color: darkgrey;
+        cursor: pointer;
     }
 
 *, *:before, *:after {

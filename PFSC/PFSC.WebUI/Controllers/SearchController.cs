@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using PFSC.Services.Abstract.Search;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace PFSC.WebUI.Controllers
 {
@@ -32,10 +33,12 @@ namespace PFSC.WebUI.Controllers
             return Json(_searchService.GetTechnologies());
         }
 
-        public ActionResult FactoriesForAutocomplete(string searchCriteria)
+        [HttpGet]
+        public JsonResult FactoriesForAutocomplete(string searchCriteria)
         {
             var matchedFactories = _searchService.SearchFactoriesShort(searchCriteria);
-            return PartialView(matchedFactories);
+            return Json(matchedFactories);
+            //return PartialView(matchedFactories);
         }
     }
 }

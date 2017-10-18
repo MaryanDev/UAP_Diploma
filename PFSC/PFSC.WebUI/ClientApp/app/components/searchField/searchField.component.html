@@ -1,17 +1,19 @@
 ﻿<div class="row">
     <form class="col-md-6 col-md-push-3">
-        <!--<mat-form-field  class="example-full-width">
-            <input matInput placeholder="Пошук" aria-label="State" [matAutocomplete]="auto" [formControl]="factoryCtrl">
+        <mat-form-field  class="example-full-width">
+            <input matInput placeholder="Пошук" aria-label="State" (input)="filterFactories($event.target.value)" [matAutocomplete]="auto" [formControl]="factoryCtrl">
             <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let fact of filteredFactories | async" [value]="fact.name">
-                    <img style="vertical-align:middle;" aria-hidden src="{{fact.flag}}" height="25" />
-                    <span>{{ fact.name }}</span> |
-                    <small>Population: {{fact.population}}</small>
+                <mat-option *ngFor="let fact of filteredFactories" [value]="fact.title">
+                    <a href="/factory?factoryId={{fact.id}}">
+                        <img style="vertical-align: middle;" aria-hidden src="{{fact.avatar}}" height="25" />
+                        <span>{{ fact.title }}</span> |
+                        <small>Population: {{fact.address}}</small>
+                    </a>
                 </mat-option>
-
-        </mat-form-field>-->
-        <input type="text" placeholder="Пошук" class="factory-search" (blur)="hideAutocomplete=true" (click)="hideAutocomplete=false" (input)="onSearchChange($event.target.value)" />
-            <div style="z-index: 1000; position: absolute" id="autcompleteData" [hidden]="hideAutocomplete" [innerHTML]="filteredFactories"></div>
+            </mat-autocomplete>
+        </mat-form-field>
+        <!--<input type="text" placeholder="Пошук" class="factory-search" (click)="hideAutocomplete=false" (input)="onSearchChange($event.target.value)" />
+            <div style="z-index: 1000; position: absolute" id="autcompleteData" [hidden]="hideAutocomplete" [innerHTML]="filteredFactories"></div>-->
     </form>
 
 </div>

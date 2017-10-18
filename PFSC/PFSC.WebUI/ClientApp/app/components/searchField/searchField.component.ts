@@ -5,33 +5,44 @@ import { SearchService } from '../../services/searchAjax.service'
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
+import { AutocompleteFactoryModel } from "../../models/autocompleteFactoryModel";
+import { Location } from '@angular/common';
 
 @Component({
-        selector: 'search-field',
-        templateUrl: './searchField.component.html',
-        styleUrls: ['./searchField.css']
-    })
+    selector: 'search-field',
+    templateUrl: './searchField.component.html',
+    styleUrls: ['./searchField.css']
+})
 export class SearchFieldComponent {
-    //factoryCtrl: FormControl;
-    filteredFactories: any;
+    factoryCtrl: FormControl;
+    filteredFactories: AutocompleteFactoryModel[];
     hideAutocomplete: boolean;
 
     //factories: any[] = [];
 
-    constructor(private searchService: SearchService) {
-        //this.factoryCtrl = new FormControl();
-        //this.filteredFactories = this.factoryCtrl.valueChanges
-        //    .startWith(null)
-        //    .map(fact => this.filterFactories(fact));
+    constructor(private searchService: SearchService, private location: Location) {
+        this.factoryCtrl = new FormControl();
+        //this.filteredFactories =
+        this.factoryCtrl.valueChanges
+            .startWith(null)
+            .map(fact => this.filterFactories(fact));
     }
 
-    onSearchChange(name: string) {
-        this.hideAutocomplete = false;
+    //onSearchChange(name: string) {
+    //    this.hideAutocomplete = false;
+    //    console.log(name);
+    //    this.searchService.getFactoriesForAutocomplete(name).subscribe((data: Response) => {
+    //        console.log(data.text());
+    //        this.filteredFactories = data.text();
+    //    });
+
+    filterFactories(name: string) {
+        //this.hideAutocomplete = false;
         console.log(name);
         this.searchService.getFactoriesForAutocomplete(name).subscribe((data: Response) => {
-            console.log(data.text());
-            this.filteredFactories = data.text();
+            console.log(data.json());
+            this.filteredFactories = data.json();
+            return this.filteredFactories;
         });
-
     }
 }

@@ -15,9 +15,3 @@
     border: 2px solid lightgray;
     border-radius: 5px;
 }
-.autcompleteSection {
-    background-color: bisque;
-}
-.autcompleteSection .row {
-    margin-top: 15px;
-}

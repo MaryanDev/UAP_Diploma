@@ -1,18 +1,17 @@
 ﻿@model List<PFSC.Models.Search.FactoryShortModel>
 <div class="autcompleteSection">
+
     @foreach (var fact in Model)
     {
         <div class="row">
-            <a href="@Url.Action("Index", "Factory", new { factoryId = fact.Id})">
+            <a href="@Url.Link("factory", new {factoryId = fact.Id})">
                 @{
-
                     var image = string.IsNullOrEmpty(fact.Avatar) ? "/Content/Images/default-img.gif" : fact.Avatar;
-
                 }
-                <img style="vertical-align: middle;" src="@image" height="55" class="col-md-2" />
+                <img style="vertical-align: middle;" src="@image" height="55" class="col-md-2"/>
                 <span class="col-md-5">@fact.Title</span>
                 <small class="col-md-5">@fact.Address</small>
             </a>
         </div>
-                    }
+    }
 </div>
