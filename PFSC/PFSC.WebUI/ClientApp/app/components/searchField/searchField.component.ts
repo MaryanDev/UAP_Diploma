@@ -5,7 +5,7 @@ import { SearchService } from '../../services/searchAjax.service'
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
-import { AutocompleteFactoryModel } from "../../models/autocompleteFactoryModel";
+import { AutocompleteFactory } from "../../models/autocompleteFactory";
 import { Location } from '@angular/common';
 
 @Component({
@@ -15,7 +15,7 @@ import { Location } from '@angular/common';
 })
 export class SearchFieldComponent {
     factoryCtrl: FormControl;
-    filteredFactories: AutocompleteFactoryModel[];
+    filteredFactories: AutocompleteFactory[];
     hideAutocomplete: boolean;
 
     //factories: any[] = [];

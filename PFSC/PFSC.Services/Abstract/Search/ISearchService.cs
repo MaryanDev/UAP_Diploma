@@ -11,5 +11,6 @@ namespace PFSC.Services.Abstract.Search
         List<CriteriaModel> GetTechnologies();
         List<CriteriaModel> GetProduction();
         List<FactoryShortModel> SearchFactoriesShort(string searchQuery);
+        List<SearchFactoryModel> SearchFactories();
     }
 }

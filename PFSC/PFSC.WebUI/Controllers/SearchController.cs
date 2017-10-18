@@ -40,5 +40,10 @@ namespace PFSC.WebUI.Controllers
             return Json(matchedFactories);
             //return PartialView(matchedFactories);
         }
+
+        public JsonResult SearchFactories()
+        {
+            return Json(_searchService.SearchFactories());
+        }
     }
 }

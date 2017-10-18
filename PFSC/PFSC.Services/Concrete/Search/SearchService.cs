@@ -8,6 +8,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using PFSC.Entities.Entites;
 using PFSC.Models.Search;
+using Remotion.Linq.Parsing.Structure.IntermediateModel;
 
 namespace PFSC.Services.Concrete.Search
 {
@@ -48,6 +49,23 @@ namespace PFSC.Services.Concrete.Search
                     Title = f.Title,
                     Address = f.Address,
                     Avatar = f.FactoryImages.FirstOrDefault().Path
+                }).ToList();
+        }
+
+        public List<SearchFactoryModel> SearchFactories()
+        {
+            return _context.Factories
+                .Include(f => f.FactoryImages)
+                .Include(f => f.Ratings)
+                .Take(4)
+                .Select(f => new SearchFactoryModel
+                {
+                    Id = f.Id,
+                    Title = f.Title,
+                    Description = f.Description,
+                    Avatar = f.FactoryImages.FirstOrDefault().Path,
+                    Address = f.Address,
+                    Rating = f.Ratings.Average(r => r.RankValue)
                 }).ToList();
         }
     }

@@ -1,4 +1,4 @@
-﻿export class AutocompleteFactoryModel {
+﻿export class AutocompleteFactory {
     id:number;
     title:string;
     avatar:string;

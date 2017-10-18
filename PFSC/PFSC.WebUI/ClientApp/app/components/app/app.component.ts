@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { PrintingProduction } from "../../models/printingProduction";
 import { PrintingTechnology } from "../../models/printingTechnology";
 import { SearchService } from '../../services/searchAjax.service'
+import { Factory } from "../../models/factory";
 
 
 @Component({
@@ -13,6 +14,11 @@ import { SearchService } from '../../services/searchAjax.service'
 export class AppComponent {
     production: PrintingProduction[];
     technologies: PrintingTechnology[];
+
+    selectedProduction: PrintingProduction[];
+    selectedTechnology: PrintingTechnology[];
+
+    factories: Factory[];
 
     constructor(private searchService: SearchService) {
 
@@ -27,6 +33,11 @@ export class AppComponent {
         this.searchService.getTechnologies().subscribe((data: Response) => {
             console.log(data.json());
             this.technologies = data.json();
+        });
+
+        this.searchService.searchFactories().subscribe((data: Response) => {
+            console.log(data.json());
+            this.factories = data.json();
         });
     }
 }

@@ -24,5 +24,9 @@ export class SearchService {
         return this.http.get(`factoriesForAutocomplete/${searchCriteria}`);
     }
 
+    searchFactories() {
+        return this.http.get("searchFactories");
+    }
+
 
 }
