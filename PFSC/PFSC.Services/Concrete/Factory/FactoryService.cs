@@ -19,6 +19,24 @@ namespace PFSC.Services.Concrete.Factory
 
         }
 
+        public Entities.Entites.Factory GetFullFactoryInfo(int factoryId)
+        {
+            return
+                _context.Factories.Include(f => f.FactoryImages)
+                    .Include(f => f.MachineModels)
+                    .ThenInclude(m => m.Machine)
+                    .ThenInclude(m => m.Manufacturer)
+                    .Include(f => f.Production)
+                    .ThenInclude(p => p.Production)
+                    .Include(f => f.Ratings)
+                    .ThenInclude(r => r.User)
+                    .Include(f => f.Reviews)
+                    .ThenInclude(r => r.ReviewResult)
+                    .Include(f => f.District)
+                    .Include(f => f.WorkingHours)
+                    .FirstOrDefault(f => f.Id == factoryId);
+        }
+
         public IEnumerable<TopRatedFactoryInfo> GetTopRated()
         {
             var topRated =
