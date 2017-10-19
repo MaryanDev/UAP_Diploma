@@ -1,11 +1,5 @@
-<!--<mat-sidenav-container class="example-sidenav-fab-container">
-    <mat-sidenav #sidenav mode="side" opened="true" style="min-width: 300px;">-->
-        <search-sidebar [productionList]="production" [technologyList]="technologies"></search-sidebar>
-<!--</mat-sidenav>
-<button mat-mini-fab class="example-fab" (click)="sidenav.toggle()">
-    <mat-icon>add</mat-icon>
-</button>-->
+
 <div style="margin-right:20px">
-    <search-area [factories]="factories"></search-area>
+    <router-outlet></router-outlet>
+    <!--<search-area></search-area>-->
 </div>
-<!--</mat-sidenav-container>-->

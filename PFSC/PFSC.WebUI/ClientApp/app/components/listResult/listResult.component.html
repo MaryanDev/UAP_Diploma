@@ -1,8 +1,5 @@
-﻿<div style="margin-top:3%;">
-    <search-item></search-item>
-    <search-item></search-item>
-    <search-item></search-item>
-    <search-item></search-item>
+﻿<div>
+    <search-item *ngFor="let factory of factories" [factory]="factory"></search-item>
 </div>
 
 <pagination></pagination>

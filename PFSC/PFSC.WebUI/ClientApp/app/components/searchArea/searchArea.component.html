@@ -1,10 +1,9 @@
-﻿<div class="w3-main" style="margin-left: 320px; padding-top: 64px;">
+﻿<search-sidebar [productionList]="production" [technologyList]="technologies"></search-sidebar>
+<div class="w3-main" style="margin-left: 320px; padding-top: 64px;">
     <search-field></search-field>
-    <mode-switcher></mode-switcher>
-    <div style="margin-top: 20px;">
-        <router-outlet></router-outlet>
+    <!--<mode-switcher></mode-switcher>-->
+    <div style="margin-top: 20px;" class="row">
+        <list-result [factories]="factories" class="col-md-7"></list-result>
+        <map-result class="col-md-5"></map-result>
     </div>
-    <!-- Pagination -->
-
-    <!-- END MAIN -->
 </div>

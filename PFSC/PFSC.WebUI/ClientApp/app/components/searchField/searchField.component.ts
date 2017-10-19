@@ -6,7 +6,6 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/startWith';
 import 'rxjs/add/operator/map';
 import { AutocompleteFactory } from "../../models/autocompleteFactory";
-import { Location } from '@angular/common';
 
 @Component({
     selector: 'search-field',
@@ -20,7 +19,7 @@ export class SearchFieldComponent {
 
     //factories: any[] = [];
 
-    constructor(private searchService: SearchService, private location: Location) {
+    constructor(private searchService: SearchService) {
         this.factoryCtrl = new FormControl();
         //this.filteredFactories =
         this.factoryCtrl.valueChanges

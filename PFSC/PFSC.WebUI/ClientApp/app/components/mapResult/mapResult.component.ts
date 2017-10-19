@@ -6,7 +6,7 @@
     styleUrls: ['./mapResult.css']
 })
 export class MapResultComponent {
-    positions: Number[][];
+    positions: number[][];
 
     showRandomMarkers() {
         let randomLat: number, randomLng: number;

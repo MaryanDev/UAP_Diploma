@@ -9,35 +9,6 @@ import { Factory } from "../../models/factory";
 @Component({
     selector: 'app',
     templateUrl: './app.component.html',
-    providers: [SearchService]
 })
 export class AppComponent {
-    production: PrintingProduction[];
-    technologies: PrintingTechnology[];
-
-    selectedProduction: PrintingProduction[];
-    selectedTechnology: PrintingTechnology[];
-
-    factories: Factory[];
-
-    constructor(private searchService: SearchService) {
-
-    }
-
-    ngOnInit() {
-        this.searchService.getProduction().subscribe((data: Response) => {
-            console.log(data.json());
-            this.production = data.json();
-        });
-
-        this.searchService.getTechnologies().subscribe((data: Response) => {
-            console.log(data.json());
-            this.technologies = data.json();
-        });
-
-        this.searchService.searchFactories().subscribe((data: Response) => {
-            console.log(data.json());
-            this.factories = data.json();
-        });
-    }
 }

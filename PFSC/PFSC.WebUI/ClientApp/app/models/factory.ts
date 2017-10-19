@@ -1,6 +1,6 @@
-﻿import Factory1 = require("./autocompleteFactory");
+﻿import {AutocompleteFactory} from "./autocompleteFactory"
 
-export class Factory extends Factory1.AutocompleteFactory{
+export class Factory extends AutocompleteFactory{
     description: string;
     rating:number;
 }
