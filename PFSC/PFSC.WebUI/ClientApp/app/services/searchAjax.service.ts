@@ -1,7 +1,9 @@
-﻿import { Injectable } from '@angular/core';
+﻿import { Injectable, InjectionToken } from '@angular/core';
 import { Http } from '@angular/http';
 import { PrintingProduction } from "../models/printingProduction";
 import { PrintingTechnology } from "../models/printingTechnology";
+
+
 
 @Injectable()
 export class SearchService {
@@ -24,8 +26,8 @@ export class SearchService {
         return this.http.get(`factoriesForAutocomplete/${searchCriteria}`);
     }
 
-    searchFactories() {
-        return this.http.get("searchFactories");
+    searchFactories(page:number) {
+        return this.http.get(`searchFactories/${page}`);
     }
 
 

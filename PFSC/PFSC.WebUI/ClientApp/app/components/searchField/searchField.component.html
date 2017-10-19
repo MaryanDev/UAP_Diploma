@@ -4,7 +4,7 @@
             <input matInput placeholder="Пошук" aria-label="State" (input)="filterFactories($event.target.value)" [matAutocomplete]="auto" [formControl]="factoryCtrl">
             <mat-autocomplete #auto="matAutocomplete">
                 <mat-option *ngFor="let fact of filteredFactories" [value]="fact.title">
-                    <a href="/factory?factoryId={{fact.id}}">
+                    <a [routerLink]="['/company', fact.id]">
                         <img style="vertical-align: middle;" aria-hidden src="{{fact.avatar}}" height="25" />
                         <span>{{ fact.title }}</span> |
                         <small>Population: {{fact.address}}</small>

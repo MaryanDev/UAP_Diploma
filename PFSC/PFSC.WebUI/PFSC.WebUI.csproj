@@ -52,6 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\components\company\companyDetails.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\listResult\listResult.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\mapResult\mapResult.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\modeSwitcher\modeSwitcher.component.ts" />
@@ -64,6 +65,10 @@
     <TypeScriptCompile Include="ClientApp\app\models\printingProduction.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\printingTechnology.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\searchAjax.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\assets\images\" />
   </ItemGroup>
 
   <Target Name="DebugRunWebpack" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('wwwroot\dist') ">

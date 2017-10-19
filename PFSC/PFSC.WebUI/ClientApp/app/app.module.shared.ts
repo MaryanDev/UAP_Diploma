@@ -41,6 +41,7 @@ import {
 import { CdkTableModule } from '@angular/cdk/table';
 
 import { NguiMapModule } from '@ngui/map';
+import { StarRatingModule } from 'angular-star-rating';
 
 import { AppComponent } from './components/app/app.component';
 import { SearchSidebarComponent } from "./components/searchSidebar/searchSidebar.component";
@@ -51,6 +52,7 @@ import { SearchItemComponent } from "./components/searchItem/searchItem.componen
 import { ListResultComponent } from "./components/listResult/listResult.component";
 import { MapResultComponent } from "./components/mapResult/mapResult.component";
 import { SearchAreaComponent } from "./components/searchArea/searchArea.component";
+import { CompanyDetailsComponent } from "./components/company/companyDetails.component";
 
 
 @NgModule({
@@ -63,7 +65,8 @@ import { SearchAreaComponent } from "./components/searchArea/searchArea.componen
         SearchItemComponent,
         ListResultComponent,
         MapResultComponent,
-        SearchAreaComponent
+        SearchAreaComponent,
+        CompanyDetailsComponent
     ],
     imports: [
         CommonModule,
@@ -104,19 +107,16 @@ import { SearchAreaComponent } from "./components/searchArea/searchArea.componen
         MatTooltipModule,
         MatStepperModule,
 
-        //RouterModule.forRoot([
-        //    { path: 'factories', component: SearchAreaComponent, pathMatch: 'full' },
-        //    //{ path: 'mapView', component: MapResultComponent },
-        //    { path: '', redirectTo: 'factories', pathMatch: 'full' }
-        //]),
-
         RouterModule.forRoot([
 
-            { path: 'companies', component: SearchAreaComponent },
-            { path: '', component: SearchAreaComponent },
+            { path: 'companies', redirectTo: 'companies/', pathMatch: 'full' },
+            { path: 'companies/:page', component: SearchAreaComponent },
+            { path: 'company/:id', component: CompanyDetailsComponent },
+            { path: '', redirectTo: 'companies/', pathMatch: 'full' },
             { path: '**', component: SearchAreaComponent }
         ]),
-        NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDggJ-GvvJXNII9jccODZ3fKI5cIyW7BMs' })
+        NguiMapModule.forRoot({ apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDggJ-GvvJXNII9jccODZ3fKI5cIyW7BMs' }),
+        StarRatingModule.forRoot()
     ],
     //providers: [
     //    { provide: LocationStrategy, useClass: HashLocationStrategy }

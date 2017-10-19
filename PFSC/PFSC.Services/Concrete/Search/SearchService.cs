@@ -52,21 +52,27 @@ namespace PFSC.Services.Concrete.Search
                 }).ToList();
         }
 
-        public List<SearchFactoryModel> SearchFactories()
+        public List<SearchFactoryModel> SearchFactories(int page)
         {
             return _context.Factories
                 .Include(f => f.FactoryImages)
                 .Include(f => f.Ratings)
+                .Skip((page - 1) * 4)
                 .Take(4)
                 .Select(f => new SearchFactoryModel
                 {
                     Id = f.Id,
                     Title = f.Title,
                     Description = f.Description,
-                    Avatar = f.FactoryImages.FirstOrDefault().Path,
+                    Avatar = string.IsNullOrEmpty(f.FactoryImages.FirstOrDefault().Path) ? "/Content/Images/default-img.gif" : f.FactoryImages.FirstOrDefault().Path,
                     Address = f.Address,
                     Rating = f.Ratings.Average(r => r.RankValue)
                 }).ToList();
+        }
+
+        public int GetCountOfFactories(Func<Entities.Entites.Factory, bool> criteria = null)
+        {
+            return criteria == null ? _context.Factories.Count() : _context.Factories.Count(criteria);
         }
     }
 }

@@ -2,4 +2,4 @@
     <search-item *ngFor="let factory of factories" [factory]="factory"></search-item>
 </div>
 
-<pagination></pagination>
+<pagination [allPages]="allPages" [currentPage]="currentPage"></pagination>
