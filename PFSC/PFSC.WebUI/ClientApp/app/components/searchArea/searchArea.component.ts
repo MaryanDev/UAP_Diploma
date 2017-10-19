@@ -48,7 +48,7 @@ export class SearchAreaComponent {
                 this.loadFactories();
             });
 
-        this.loadFactories();
+        //this.loadFactories();
     }
 
     private loadFactories() {

@@ -1,7 +1,6 @@
 ﻿<div class="map-container">
-    <ngui-map zoom="14" center="[43.7250, -79.7699]" >
-        <marker *ngFor="let pos of positions"
-                (click)="showInfoWindow($event)"
-                [position]="pos"></marker>
+    <ngui-map zoom="12" center="[49.8371563, 24.0229379]" >
+        <marker *ngFor="let factory of factories" [routerLink]="['/company', factory.id]"
+                [position]="[factory.location.lattitude, factory.location.longitude]"></marker>
     </ngui-map>
 </div>

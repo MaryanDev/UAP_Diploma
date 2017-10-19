@@ -1,6 +1,8 @@
-﻿import {AutocompleteFactory} from "./autocompleteFactory"
+﻿import { AutocompleteFactory } from "./autocompleteFactory"
+import { Location } from "./location";
 
 export class Factory extends AutocompleteFactory{
     description: string;
-    rating:number;
+    rating: number;
+    location:Location;
 }

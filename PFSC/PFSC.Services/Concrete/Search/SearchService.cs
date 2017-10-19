@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using PFSC.Entities.Entites;
+using PFSC.Models.Common;
 using PFSC.Models.Search;
 using Remotion.Linq.Parsing.Structure.IntermediateModel;
 
@@ -66,7 +67,12 @@ namespace PFSC.Services.Concrete.Search
                     Description = f.Description,
                     Avatar = string.IsNullOrEmpty(f.FactoryImages.FirstOrDefault().Path) ? "/Content/Images/default-img.gif" : f.FactoryImages.FirstOrDefault().Path,
                     Address = f.Address,
-                    Rating = f.Ratings.Average(r => r.RankValue)
+                    Rating = f.Ratings.Average(r => r.RankValue),
+                    Location = new Location
+                    {
+                        Lattitude = f.Lattitude.Value,
+                        Longitude = f.Longittude.Value
+                    }
                 }).ToList();
         }
 

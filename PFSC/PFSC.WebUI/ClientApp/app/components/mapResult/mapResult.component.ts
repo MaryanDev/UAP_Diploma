@@ -1,4 +1,5 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, Input } from '@angular/core';
+import { Factory } from "../../models/factory";
 
 @Component({
     selector: 'map-result',
@@ -6,28 +7,24 @@
     styleUrls: ['./mapResult.css']
 })
 export class MapResultComponent {
-    positions: number[][];
+    //positions: number[][];
 
-    showRandomMarkers() {
-        let randomLat: number, randomLng: number;
-        this.positions = [];
-        for (let i = 0; i < 9; i++) {
-            randomLat = Math.random() * 0.0099 + 43.7250;
-            randomLng = Math.random() * 0.0099 + -79.7699;
-            this.positions.push([randomLat, randomLng]);
-        }
-    }
+    @Input()
+    factories: Factory[];
+
+    //showRandomMarkers() {
+    //    let randomLat: number, randomLng: number;
+    //    this.positions = [];
+    //    for (let i = 0; i < 9; i++) {
+    //        randomLat = Math.random() * 0.0099 + 43.7250;
+    //        randomLng = Math.random() * 0.0099 + -79.7699;
+    //        this.positions.push([randomLat, randomLng]);
+    //    }
+    //}
 
     constructor() {
-        this.showRandomMarkers();
+        //this.showRandomMarkers();
     }
 }
 
-class Location {
-    Lattitude: number;
-    Longittude: number;
-    constructor(lat: number, lon: number) {
-        this.Lattitude = lat;
-        this.Longittude = lon;
-    }
-}
+
