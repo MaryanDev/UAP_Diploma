@@ -8,9 +8,9 @@ namespace PFSC.WebUI.Controllers
 {
     public class FactoryController : Controller
     {
-        public ActionResult Index(int factoryId)
+        public JsonResult GetFactory(int factoryId)
         {
-            return View();
+            return null;
         }
     }
 }

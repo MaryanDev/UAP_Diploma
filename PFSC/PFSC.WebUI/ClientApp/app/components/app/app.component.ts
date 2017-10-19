@@ -9,6 +9,7 @@ import { Factory } from "../../models/factory";
 @Component({
     selector: 'app',
     templateUrl: './app.component.html',
+
 })
 export class AppComponent {
 }
