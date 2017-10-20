@@ -1,7 +1,7 @@
 ﻿//declare var localStorage: any;
 
 import { Component, Input, AfterViewChecked } from '@angular/core';
-import {Factory} from "../../models/factory";
+import {SearchFactory} from "../../models/searchFactory";
 
 @Component({
     selector: 'list-result',
@@ -9,7 +9,7 @@ import {Factory} from "../../models/factory";
 })
 export class ListResultComponent  {
     @Input()
-    factories: Factory[];
+    factories: SearchFactory[];
     @Input()
     allPages: number[];
     @Input()

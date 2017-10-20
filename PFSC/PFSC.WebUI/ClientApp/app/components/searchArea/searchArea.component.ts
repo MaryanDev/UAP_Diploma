@@ -5,7 +5,7 @@ import { ActivatedRoute } from '@angular/router'
 import { PrintingProduction } from "../../models/printingProduction";
 import { PrintingTechnology } from "../../models/printingTechnology";
 import { SearchService } from '../../services/searchAjax.service'
-import { Factory } from "../../models/factory";
+import { SearchFactory } from "../../models/searchFactory";
 
 @Component({
     selector: 'search-area',
@@ -19,7 +19,7 @@ export class SearchAreaComponent {
     selectedProduction: PrintingProduction[];
     selectedTechnology: PrintingTechnology[];
 
-    factories: Factory[];
+    factories: SearchFactory[];
 
     page:number = 1;
 

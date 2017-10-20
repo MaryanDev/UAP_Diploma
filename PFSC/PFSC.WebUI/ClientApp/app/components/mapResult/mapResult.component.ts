@@ -1,5 +1,5 @@
 ﻿import { Component, Input } from '@angular/core';
-import { Factory } from "../../models/factory";
+import { SearchFactory } from "../../models/searchFactory";
 
 @Component({
     selector: 'map-result',
@@ -10,7 +10,7 @@ export class MapResultComponent {
     //positions: number[][];
 
     @Input()
-    factories: Factory[];
+    factories: SearchFactory[];
 
     //showRandomMarkers() {
     //    let randomLat: number, randomLng: number;

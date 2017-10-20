@@ -1,9 +1,16 @@
-﻿<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
+﻿@section HeadStyles{
+    <link href="~/Content/Styles/site/star-rating.css" rel="stylesheet" />
+    <link href="~/Content/Styles/slick.css" rel="stylesheet" />
+    <link href="~/Content/Styles/slick-theme.css" rel="stylesheet" />
+}
+
+<app asp-prerender-module="ClientApp/dist/main-server">Loading...</app>
 
 <script src="~/dist/vendor.js" asp-append-version="true"></script>
 @{Html.RenderPartial("Footer");}
 @section FootScripts {
     <script src="~/dist/main-client.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <script>
         // Get the Sidebar
         var mySidebar = document.getElementById("mySidebar");
@@ -29,14 +36,39 @@
         }
     </script>
     @*<script>
+            $(document).ready(function () {
+                $(".accordion").accordion({
+                    collapsible: true,
+                    clearStyle: true,
+                    active: false
+                });
+            })
+        </script>*@
+    <script>
         $(document).ready(function () {
-            $(".accordion").accordion({
-                collapsible: true,
-                clearStyle: true,
-                active: false
-            });
-        })
-    </script>*@
+            $(".mat-tab-labels").children().on("click",
+                function () {
+                    console.log("slick");
+                    var first = $('.current-photo');
+                    first.slick({
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        fade: true,
+                        asNavFor: '.factoryPhotos-nav'
+                    });
+                    var second = $('.factoryPhotos-nav');
+                    second.slick({
+                        slidesToShow: 4,
+                        slidesToScroll: 1,
+                        asNavFor: '.current-photo',
+                        dots: true,
+                        centerMode: true,
+                        focusOnSelect: true
+                    });
+                });
+        });
+    </script>
 }
 
 

@@ -42,8 +42,13 @@
     <None Remove="ClientApp\app\components\searchSidebar\searchSidebar.component.ts" />
     <None Remove="ClientApp\app\models\factory.ts" />
     <None Remove="ClientApp\app\models\Location.ts" />
+    <None Remove="ClientApp\app\models\machine.ts" />
     <None Remove="ClientApp\app\models\printingProduction.ts" />
     <None Remove="ClientApp\app\models\printingTechnology.ts" />
+    <None Remove="ClientApp\app\models\review.ts" />
+    <None Remove="ClientApp\app\models\user.ts" />
+    <None Remove="ClientApp\app\models\workingHours.ts" />
+    <None Remove="ClientApp\app\services\factoryAjax.service.ts" />
     <None Remove="ClientApp\app\services\searchAjax.service.ts" />
   </ItemGroup>
 
@@ -63,9 +68,15 @@
     <TypeScriptCompile Include="ClientApp\app\components\searchSidebar\searchSidebar.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\autocompleteFactory.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\factory.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\machine.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\review.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\searchFactory.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\location.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\printingProduction.ts" />
     <TypeScriptCompile Include="ClientApp\app\models\printingTechnology.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\user.ts" />
+    <TypeScriptCompile Include="ClientApp\app\models\workingHours.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\factoryAjax.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\searchAjax.service.ts" />
   </ItemGroup>
 

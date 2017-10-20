@@ -1,5 +1,5 @@
 ﻿import { Component, Input } from '@angular/core';
-import { Factory } from "../../models/factory";
+import { SearchFactory } from "../../models/searchFactory";
 
 @Component({
     selector: 'search-item',
@@ -7,5 +7,5 @@ import { Factory } from "../../models/factory";
 })
 export class SearchItemComponent {
     @Input()
-    factory : Factory;
+    factory : SearchFactory;
 }

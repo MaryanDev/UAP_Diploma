@@ -111,7 +111,7 @@ import { CompanyDetailsComponent } from "./components/company/companyDetails.com
 
             { path: 'companies', redirectTo: 'companies/', pathMatch: 'full' },
             { path: 'companies/:page', component: SearchAreaComponent },
-            { path: 'company/:id', component: CompanyDetailsComponent },
+            { path: 'company/:factoryId', component: CompanyDetailsComponent },
             { path: '', redirectTo: 'companies/', pathMatch: 'full' },
             { path: '**', component: SearchAreaComponent }
         ]),

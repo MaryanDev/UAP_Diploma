@@ -29,6 +29,4 @@ export class SearchService {
     searchFactories(page:number) {
         return this.http.get(`searchFactories/${page}`);
     }
-
-
 }
