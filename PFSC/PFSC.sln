@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFSC.Entities", "PFSC.Entit
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "PFSC.Database", "PFSC.Database\PFSC.Database.sqlproj", "{AB73EA9A-6779-4677-A6E8-D6C23CEBA955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PFSC.WebUI", "PFSC.WebUI\PFSC.WebUI.csproj", "{C5CB192C-68BB-47E7-A71B-93B358A71DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PFSC.WebUI", "PFSC.WebUI\PFSC.WebUI.csproj", "{C5CB192C-68BB-47E7-A71B-93B358A71DF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
