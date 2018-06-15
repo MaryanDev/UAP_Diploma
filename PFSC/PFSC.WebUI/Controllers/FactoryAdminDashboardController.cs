@@ -12,5 +12,25 @@ namespace PFSC.WebUI.Controllers
         {
             return View();
         }
+
+        public IActionResult AdminSummary()
+        {
+            return PartialView();
+        }
+
+        public IActionResult Profile()
+        {
+            return PartialView();
+        }
+
+        public IActionResult MainTable()
+        {
+            return PartialView();
+        }
+
+        public IActionResult Map()
+        {
+            return PartialView();
+        }
     }
 }
