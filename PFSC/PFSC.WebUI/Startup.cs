@@ -17,6 +17,8 @@ using PFSC.Services.Concrete.Factory;
 using PFSC.Services.Concrete.Security;
 using PFSC.Services.Concrete.Search;
 using PFSC.Services.Abstract.Search;
+using PFSC.Services.Abstract.FactoryAdminDashboard;
+using PFSC.Services.Concrete.FactoryAdminDashboard;
 
 namespace PFSC_WebUI
 {
@@ -44,6 +46,7 @@ namespace PFSC_WebUI
             services.AddTransient<IPfscAuthenticationService, PfscAuthenticationService>();
             services.AddTransient<IFactoryService, FactoryService>();
             services.AddTransient<ISearchService, SearchService>();
+            services.AddTransient<IFactoryAdminDasboardService, FactoryAdminDashboardService>();
             services.AddMvc();
         }
 

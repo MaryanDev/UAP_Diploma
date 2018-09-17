@@ -5,19 +5,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PFSC.Models.Enums;
+using PFSC.Services.Abstract.FactoryAdminDashboard;
 
 namespace PFSC.WebUI.Controllers
 {
     public class FactoryAdminDashboardController : Controller
     {
-        public FactoryAdminDashboardController()
+        private IFactoryAdminDasboardService _dasboardService;
+        public FactoryAdminDashboardController(IFactoryAdminDasboardService dasboardService)
         {
-
+            this._dasboardService = dasboardService;
         }
+
         [Authorize(Roles = "Admin,FactoryAdmin")]
         public IActionResult Index()
         {
-            return View();
+            var dashboardModel = _dasboardService.BuildDasboardModel(1);
+            return View(dashboardModel);
         }
 
         public IActionResult AdminSummary()

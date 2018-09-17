@@ -5,7 +5,7 @@ using System.Text;
 
 namespace PFSC.Entities.Entites
 {
-    public class MachineModel
+    public class Machine
     {
         public int Id { get; set; }
         public string Title { get; set; }
@@ -16,7 +16,7 @@ namespace PFSC.Entities.Entites
         public MachineManufacturer Manufacturer { get; set; }
         public ICollection<MachineToFactory> Factories { get; set; }
 
-        public MachineModel()
+        public Machine()
         {
             Factories = new List<MachineToFactory>();
         }

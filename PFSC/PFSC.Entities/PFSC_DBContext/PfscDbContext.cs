@@ -28,7 +28,7 @@ namespace PFSC.Entities.PFSC_DBContext
         public DbSet<Factory> Factories { get; set; }
         public DbSet<FactoryImage> FactoryImages { get; set; }
         public DbSet<MachineManufacturer> MachineManufacturers { get; set; }
-        public DbSet<MachineModel> MachineModels { get; set; }
+        public DbSet<Machine> Machines { get; set; }
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Review> Reviews { get; set; }
         public DbSet<ReviewResult> ReviewResults { get; set; }

@@ -26,7 +26,7 @@ namespace PFSC.Entities.Entites
         public ICollection<Review> Reviews { get; set; }
         public ICollection<FactoryToTechnology> Technologies { get; set; }
         public ICollection<FactoryToProduction> Production { get; set; }
-        public ICollection<MachineToFactory> MachineModels { get; set; }
+        public ICollection<MachineToFactory> Machines{ get; set; }
         public ICollection<FactoryWorkingHours> WorkingHours { get; set; }
         public ICollection<FactoryImage> FactoryImages { get; set; }
         public ICollection<FactoryAdminNotification> FactoryAdminNotifications { get; set; }
@@ -38,7 +38,7 @@ namespace PFSC.Entities.Entites
             Ratings = new List<Rating>();
             Reviews = new List<Review>();
             Technologies = new List<FactoryToTechnology>();
-            MachineModels = new List<MachineToFactory>();
+            Machines = new List<MachineToFactory>();
             WorkingHours = new List<FactoryWorkingHours>();
             Production = new List<FactoryToProduction>();
             FactoryImages = new List<FactoryImage>();

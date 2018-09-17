@@ -17,7 +17,7 @@ DELETE FROM dbo.Factories
 
 DELETE FROM dbo.ReviewResults
 
-DELETE FROM dbo.MachineModels
+DELETE FROM dbo.Machines
 
 DELETE FROM dbo.MachineManufacturers
 

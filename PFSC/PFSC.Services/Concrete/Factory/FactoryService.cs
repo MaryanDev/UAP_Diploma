@@ -27,7 +27,7 @@ namespace PFSC.Services.Concrete.Factory
         {
             return
                 _context.Factories.Include(f => f.FactoryImages)
-                    .Include(f => f.MachineModels)
+                    .Include(f => f.Machines)
                     .ThenInclude(m => m.Machine)
                     .ThenInclude(m => m.Manufacturer)
                     .Include(f => f.Production)
@@ -55,7 +55,7 @@ namespace PFSC.Services.Concrete.Factory
                         },
                         District = f.District.Title,
                         FactoryImages = f.FactoryImages.Select(fi => string.IsNullOrEmpty(fi.Path) ? "/Content/Images/default-img.gif" : fi.Path),
-                        Machines = f.MachineModels.Select(m => new Models.Factory.MachineModel
+                        Machines = f.Machines.Select(m => new Models.Factory.MachineModel
                         {
                             Id = m.Machine.Id,
                             Title = m.Machine.Title,

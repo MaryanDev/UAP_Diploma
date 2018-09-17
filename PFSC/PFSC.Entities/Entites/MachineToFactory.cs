@@ -12,7 +12,7 @@ namespace PFSC.Entities.Entites
         public int FactoryId { get; set; }
 
         [ForeignKey(nameof(MachineId))]
-        public MachineModel Machine { get; set; }
+        public Machine Machine { get; set; }
         [ForeignKey(nameof(FactoryId))]
         public Factory Factory { get; set; }
     }

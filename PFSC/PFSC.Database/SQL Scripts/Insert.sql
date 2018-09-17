@@ -127,8 +127,8 @@ VALUES
 (9, 'Spain', '', 'Domino')
 SET IDENTITY_INSERT dbo.MachineManufacturers OFF
 
-SET IDENTITY_INSERT dbo.MachineModels ON
-INSERT INTO dbo.MachineModels
+SET IDENTITY_INSERT dbo.Machines ON
+INSERT INTO dbo.Machines
 (
 	Id,
     [Description],
@@ -152,7 +152,7 @@ VALUES
 (14, '', 7, 'Speedmaster SX 52 Edition'),
 (15, '', 8, 'MINIFLEX 533'),
 (16, '', 9, 'N600i')
-SET IDENTITY_INSERT dbo.MachineModels OFF
+SET IDENTITY_INSERT dbo.Machines OFF
 
 SET IDENTITY_INSERT dbo.ReviewResults ON
 INSERT INTO dbo.ReviewResults
