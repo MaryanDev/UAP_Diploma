@@ -11,6 +11,7 @@ using PFSC.Services.Abstract.Base;
 using PFSC.Services.Abstract.Security;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 using PFSC.Models.Enums;
 
 namespace PFSC.Services.Concrete.Security
@@ -26,7 +27,7 @@ namespace PFSC.Services.Concrete.Security
         public bool Login(LoginModel loginModel)
         {
             User user =
-                _context.Users.FirstOrDefault(u => u.Email == loginModel.LoginName && u.Password == loginModel.Password);
+                _context.Users.Include(u => u.Role).FirstOrDefault(u => u.Email == loginModel.LoginName && u.Password == loginModel.Password);
             if (user != null)
             {
                 Authenticate(user);

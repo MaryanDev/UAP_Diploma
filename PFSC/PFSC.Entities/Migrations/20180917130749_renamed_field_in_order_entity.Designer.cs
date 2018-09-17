@@ -11,9 +11,10 @@ using System;
 namespace PFSC.Entities.Migrations
 {
     [DbContext(typeof(PfscDbContext))]
-    partial class PfscDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180917130749_renamed_field_in_order_entity")]
+    partial class renamed_field_in_order_entity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

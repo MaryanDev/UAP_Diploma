@@ -10,7 +10,7 @@ namespace PFSC.Entities.Entites
     {
         [Key]
         public int Id { get; set; }
-        public string CustimerName { get; set; }
+        public string CustomerName { get; set; }
         public string CustormerPhone { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? CompletedDate { get; set; }

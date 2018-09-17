@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PFSC.Models.Enums;
+using System;
 
 namespace PFSC.Models.User
 {
@@ -12,5 +11,6 @@ namespace PFSC.Models.User
         public string Email { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string AvatarPath { get; set; }
+        public PfscRoles Role { get; set; }
     }
 }

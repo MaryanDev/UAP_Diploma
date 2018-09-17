@@ -11,9 +11,10 @@ using System;
 namespace PFSC.Entities.Migrations
 {
     [DbContext(typeof(PfscDbContext))]
-    partial class PfscDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180917113407_added_avatar_path_to_employee")]
+    partial class added_avatar_path_to_employee
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -283,7 +284,7 @@ namespace PFSC.Entities.Migrations
 
                     b.Property<DateTime>("CreatedDate");
 
-                    b.Property<string>("CustomerName");
+                    b.Property<string>("CustimerName");
 
                     b.Property<string>("CustormerPhone");
 

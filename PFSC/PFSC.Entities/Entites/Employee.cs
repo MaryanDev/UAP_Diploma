@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text;
 
 namespace PFSC.Entities.Entites
 {
@@ -19,6 +18,7 @@ namespace PFSC.Entities.Entites
         public DateTime? EndDate { get; set; }
         public decimal Salary { get; set; }
         public int FactoryId { get; set; }
+        public string AvatarPath { get; set; }
 
         [ForeignKey(nameof(FactoryId))]
         public Factory Factory { get; set; }
