@@ -7,6 +7,9 @@
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">News</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Clients</a>
-        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Partners</a>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a href="@Url.Action("Logout", "Account")" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Logout</a>
+        }
     </div>
 </div>

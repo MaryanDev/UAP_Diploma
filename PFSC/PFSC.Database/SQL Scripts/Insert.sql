@@ -4,7 +4,8 @@ GO
 SET IDENTITY_INSERT Roles on
 INSERT INTO Roles (Id, Title)
 VALUES (1, 'User'),
-(2, 'Admin');
+(2, 'Admin'),
+(3, 'FactoryAdmin');
 SET IDENTITY_INSERT Roles off
 
 SET IDENTITY_INSERT dbo.PrintingTechnologies ON 

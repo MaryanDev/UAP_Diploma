@@ -10,7 +10,7 @@ namespace PFSC.Entities.PFSC_DBContext
     {
         public PfscDbContext(DbContextOptions<PfscDbContext> options) : base(options)
         {
-                
+
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,5 +34,13 @@ namespace PFSC.Entities.PFSC_DBContext
         public DbSet<ReviewResult> ReviewResults { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<EmployeeMark> EmployeeMakrs { get; set; }
+        public DbSet<FactoryAdminNotification> FactoryAdminNotifications { get; set; }
+        public DbSet<NotificationType> NotificationTypes { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderState> OrderStates { get; set; }
+        public DbSet<OrderValue> OrderValues { get; set; }
     }
 }

@@ -29,6 +29,9 @@ namespace PFSC.Entities.Entites
         public ICollection<MachineToFactory> MachineModels { get; set; }
         public ICollection<FactoryWorkingHours> WorkingHours { get; set; }
         public ICollection<FactoryImage> FactoryImages { get; set; }
+        public ICollection<FactoryAdminNotification> FactoryAdminNotifications { get; set; }
+        public ICollection<Employee> Employees { get; set; }
+        public ICollection<Order> Orders { get; set; }
 
         public Factory()
         {
@@ -39,6 +42,9 @@ namespace PFSC.Entities.Entites
             WorkingHours = new List<FactoryWorkingHours>();
             Production = new List<FactoryToProduction>();
             FactoryImages = new List<FactoryImage>();
+            FactoryAdminNotifications = new List<FactoryAdminNotification>();
+            Employees = new List<Employee>();
+            Orders = new List<Order>();
         }
     }
 }

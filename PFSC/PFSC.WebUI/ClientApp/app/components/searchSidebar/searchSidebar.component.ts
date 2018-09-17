@@ -16,9 +16,9 @@ export class SearchSidebarComponent {
     disabled = false;
 
     @Input()
-    productionList: PrintingProduction[];
+    productionList: PrintingProduction[] | undefined;
     @Input()
-    technologyList: PrintingTechnology[];
+    technologyList: PrintingTechnology[] | undefined;
 
     //constructor(private searchService: SearchService) {
 

@@ -29,7 +29,7 @@ namespace PFSC.Services.Concrete.Security
                 _context.Users.FirstOrDefault(u => u.Email == loginModel.LoginName && u.Password == loginModel.Password);
             if (user != null)
             {
-                Authenticate(loginModel.LoginName);
+                Authenticate(user);
                 return true;
             }
             return false;
@@ -52,7 +52,7 @@ namespace PFSC.Services.Concrete.Security
                 _context.Users.Add(newUser);
                 _context.SaveChanges();
 
-                Authenticate(registerModel.Email);
+                Authenticate(newUser);
                 return newUser;
             }
             return null;
@@ -68,11 +68,12 @@ namespace PFSC.Services.Concrete.Security
             return _context.Roles.FirstOrDefault(r => r.Title == role.ToString());
         }
 
-        private void Authenticate(string userName)
+        private void Authenticate(User user)
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimsIdentity.DefaultNameClaimType, userName)
+                new Claim(ClaimsIdentity.DefaultNameClaimType, user.Email),
+                new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role.Title)
             };
             ClaimsIdentity id = new ClaimsIdentity(claims, "ApplicationCookie", ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
             _httpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
