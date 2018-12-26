@@ -18,15 +18,19 @@
 
   <ItemGroup>
     <!-- Files not to publish (note that the 'dist' subfolders are re-added below) -->
+    <Compile Remove="admin-wrap-lite\**" />
     <Compile Remove="ClientApp\app\components\counter\**" />
     <Compile Remove="ClientApp\app\components\fetchdata\**" />
     <Compile Remove="ClientApp\app\components\home\**" />
     <Compile Remove="ClientApp\app\components\navmenu\**" />
+    <Content Remove="admin-wrap-lite\**" />
     <Content Remove="ClientApp\**" />
+    <EmbeddedResource Remove="admin-wrap-lite\**" />
     <EmbeddedResource Remove="ClientApp\app\components\counter\**" />
     <EmbeddedResource Remove="ClientApp\app\components\fetchdata\**" />
     <EmbeddedResource Remove="ClientApp\app\components\home\**" />
     <EmbeddedResource Remove="ClientApp\app\components\navmenu\**" />
+    <None Remove="admin-wrap-lite\**" />
     <None Remove="ClientApp\app\components\counter\**" />
     <None Remove="ClientApp\app\components\fetchdata\**" />
     <None Remove="ClientApp\app\components\home\**" />

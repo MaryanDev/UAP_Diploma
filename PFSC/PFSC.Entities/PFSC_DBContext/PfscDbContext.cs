@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using PFSC.Entities.Entites;
 
 namespace PFSC.Entities.PFSC_DBContext
@@ -10,7 +7,6 @@ namespace PFSC.Entities.PFSC_DBContext
     {
         public PfscDbContext(DbContextOptions<PfscDbContext> options) : base(options)
         {
-
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

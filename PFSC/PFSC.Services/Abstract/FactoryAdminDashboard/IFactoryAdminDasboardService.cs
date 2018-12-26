@@ -7,6 +7,6 @@ namespace PFSC.Services.Abstract.FactoryAdminDashboard
 {
     public interface IFactoryAdminDasboardService
     {
-        DashboardModel BuildDasboardModel(int factoryId);
+        DashboardModel BuildDasboardModel(int factoryId, string userName);
     }
 }

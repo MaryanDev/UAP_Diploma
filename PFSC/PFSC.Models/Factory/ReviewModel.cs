@@ -14,6 +14,6 @@ namespace PFSC.Models.Factory
         public UserModel User { get; set; }
 
         public string ReviewResultTitle { get; set; }
-        public string ReviewResulDescription { get; set; }
+        public string ReviewResultDescription { get; set; }
     }
 }

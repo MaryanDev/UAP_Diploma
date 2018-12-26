@@ -13,6 +13,7 @@ using PFSC.Models.Search;
 using PFSC.Models.User;
 using PFSC.Services.Abstract.Base;
 using PFSC.Services.Abstract.Factory;
+using PFSC.Services.Mappings;
 
 namespace PFSC.Services.Concrete.Factory
 {
@@ -80,7 +81,7 @@ namespace PFSC.Services.Concrete.Factory
                             Title = r.Title,
                             Text = r.Text,
                             DateCreated = r.DateCreated,
-                            ReviewResulDescription = r.ReviewResult.Description,
+                            ReviewResultDescription = r.ReviewResult.Description,
                             ReviewResultTitle = r.ReviewResult.Title,
                             User = new UserModel
                             {
@@ -100,6 +101,60 @@ namespace PFSC.Services.Concrete.Factory
                         })
                     })
                     .FirstOrDefault(f => f.Id == factoryId);
+        }
+
+        public List<MachineModel> GetMachines(Func<Machine, bool> predicate = null)
+        {
+            return (predicate != null
+                    ? _context.Machines
+                        .Include(m => m.Manufacturer)
+                        .Where(predicate)
+                    : _context.Machines
+                        .Include(m => m.Manufacturer)
+                )
+                .Select(PfscMappings.MachineEntityToModel)
+                .ToList();
+        }
+
+        public List<NotificationModel> GetNotifications(Func<FactoryAdminNotification, bool> predicate = null)
+        {
+            return (predicate != null
+                    ? _context.FactoryAdminNotifications
+                        .Include(fan => fan.NotificationType)
+                        .Where(predicate)
+                    : _context.FactoryAdminNotifications
+                        .Include(fan => fan.NotificationType)
+                )
+                .Select(PfscMappings.NotificationEntityToModel)
+                .ToList();
+        }
+
+        public List<OrderModel> GetOrders(Func<Order, bool> predicate = null)
+        {
+            return (predicate != null
+                    ? _context.Orders
+                        .Include(o => o.OrderState)
+                        .Include(o => o.OrderValue)
+                        .Where(predicate)
+                    : _context.Orders
+                        .Include(o => o.OrderState)
+                        .Include(o => o.OrderValue)
+                )
+                .Select(PfscMappings.OrderEntityToModel)
+                .ToList();
+        }
+
+        public List<ReviewModel> GetReviews(Func<Review, bool> predicate = null)
+        {
+            return (predicate != null
+                    ? _context.Reviews
+                        .Include(r => r.ReviewResult)
+                        .Where(predicate)
+                    : _context.Reviews
+                        .Include(r => r.ReviewResult)
+                )
+                .Select(PfscMappings.ReviewEntityToModel)
+                .ToList();
         }
 
         public IEnumerable<TopRatedFactoryInfo> GetTopRated()

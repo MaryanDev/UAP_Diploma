@@ -11,7 +11,7 @@ namespace PFSC.WebUI.Controllers
 {
     public class FactoryAdminDashboardController : Controller
     {
-        private IFactoryAdminDasboardService _dasboardService;
+        private readonly IFactoryAdminDasboardService _dasboardService;
         public FactoryAdminDashboardController(IFactoryAdminDasboardService dasboardService)
         {
             this._dasboardService = dasboardService;
@@ -20,7 +20,7 @@ namespace PFSC.WebUI.Controllers
         [Authorize(Roles = "Admin,FactoryAdmin")]
         public IActionResult Index()
         {
-            var dashboardModel = _dasboardService.BuildDasboardModel(1);
+            var dashboardModel = _dasboardService.BuildDasboardModel(1, User.Identity.Name);
             return View(dashboardModel);
         }
 

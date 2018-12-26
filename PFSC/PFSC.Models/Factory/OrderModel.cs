@@ -14,7 +14,7 @@ namespace PFSC.Models.Factory
         public string Description { get; set; }
         public Decimal Price { get; set; }
         public bool IsCompleted { get; set; }
-        public string OrderValueS { get; set; }
+        public string OrderValue { get; set; }
         public string OrderState { get; set; }
         public EmployeeModel Employee { get; set; }
     }
