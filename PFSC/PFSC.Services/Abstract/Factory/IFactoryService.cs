@@ -15,5 +15,6 @@ namespace PFSC.Services.Abstract.Factory
         List<NotificationModel> GetNotifications(Func<FactoryAdminNotification, bool> predicate = null);
         List<OrderModel> GetOrders(Func<Order, bool> predicate = null);
         List<MachineModel> GetMachines(Func<Machine, bool> predicate = null);
+        List<EmployeeModel> GetEmployees(Func<Employee, bool> predicate = null);
     }
 }

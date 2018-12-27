@@ -35,7 +35,8 @@ namespace PFSC.Services.Concrete.FactoryAdminDashboard
                     PrintingMachines =
                     _factoryService.GetMachines(m => m.Factories.Select(f => f.FactoryId).Contains(factoryId)),
                     Orders = _factoryService.GetOrders(o => o.FactoryId == factoryId),
-                    Notifications = _factoryService.GetNotifications(n => n.FactoryId == factoryId)
+                    Notifications = _factoryService.GetNotifications(n => n.FactoryId == factoryId),
+                    Employees = _factoryService.GetEmployees(emp => emp.FactoryId == factoryId)
                 };
             }
             return dashboardModel;

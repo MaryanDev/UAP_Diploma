@@ -13,6 +13,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using PFSC.Models.Enums;
+using PFSC.Models.User;
+using PFSC.Services.Mappings;
 
 namespace PFSC.Services.Concrete.Security
 {
@@ -22,6 +24,29 @@ namespace PFSC.Services.Concrete.Security
         public PfscAuthenticationService(PfscDbContext context, IHttpContextAccessor accessor) : base(context)
         {
             _httpContext = accessor.HttpContext;
+        }
+
+
+        public UserModel GetCurrentUserInfo(string userName)
+        {
+            var user = _context.Users.FirstOrDefault(u => u.Email == userName);
+            return PfscMappings.UserToUserModel(user);
+        }
+
+        public UserModel UpdateUser(UserModel user, string userName)
+        {
+            var userToUpdate = _context.Users.FirstOrDefault(x => x.Email == userName);
+            userToUpdate.AvatarPath = user.AvatarPath;
+            userToUpdate.Email = user.Email;
+            userToUpdate.FirstName = user.FirstName;
+            userToUpdate.LastName = user.LastName;
+            userToUpdate.Password = user.Password;
+
+            _context.Entry(userToUpdate).State = EntityState.Modified;
+
+            _context.SaveChanges();
+
+            return PfscMappings.UserToUserModel(userToUpdate);
         }
 
         public bool Login(LoginModel loginModel)

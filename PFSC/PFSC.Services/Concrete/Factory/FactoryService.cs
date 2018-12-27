@@ -157,6 +157,19 @@ namespace PFSC.Services.Concrete.Factory
                 .ToList();
         }
 
+        public List<EmployeeModel> GetEmployees(Func<Employee, bool> predicate = null)
+        {
+            return (predicate != null
+                    ? _context.Employees
+                        .Include(r => r.EmployeeMarks)
+                        .Where(predicate)
+                    : _context.Employees
+                        .Include(r => r.EmployeeMarks)
+                )
+                .Select(PfscMappings.EmployeeEntityToModel)
+                .ToList();
+        }
+
         public IEnumerable<TopRatedFactoryInfo> GetTopRated()
         {
             var topRated =

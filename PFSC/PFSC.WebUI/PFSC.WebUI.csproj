@@ -244,6 +244,11 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\assets\images\" />
+    <Folder Include="wwwroot\Content\Images\factory\f1\" />
+    <Folder Include="wwwroot\Content\Images\factory\f2\" />
+    <Folder Include="wwwroot\Content\Images\factory\f3\" />
+    <Folder Include="wwwroot\Content\Images\factory\f4\" />
+    <Folder Include="wwwroot\Content\Images\employee\" />
   </ItemGroup>
 
   <ItemGroup>

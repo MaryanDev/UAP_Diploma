@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 using PFSC.Entities.Entites;
+using PFSC.Models.Enums;
 using PFSC.Models.Factory;
+using PFSC.Models.User;
 
 namespace PFSC.Services.Mappings
 {
@@ -59,6 +61,33 @@ namespace PFSC.Services.Mappings
                 ReviewResultDescription = review.ReviewResult.Description,
                 ReviewResultTitle = review.ReviewResult.Title,
                 Text = review.Text
+            };
+        }
+
+        public static EmployeeModel EmployeeEntityToModel(Employee employee)
+        {
+            return new EmployeeModel()
+            {
+                Id = employee.Id,
+                AvatarPath = employee.AvatarPath,
+                Name = employee.FirstName + " " + employee.LastName,
+                Position = employee.Position.Description,
+                Salary = employee.Salary
+            };
+        }
+
+        public static UserModel UserToUserModel(User user)
+        {
+            return new UserModel
+            {
+                Id = user.Id,
+                AvatarPath = user.AvatarPath,
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                DateOfBirth = user.DateOfBirth,
+                Role = (PfscRoles)user.RoleId  ,
+                Password = user.Password
             };
         }
     }

@@ -5,16 +5,21 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using PFSC.Models.Enums;
+using PFSC.Models.User;
 using PFSC.Services.Abstract.FactoryAdminDashboard;
+using PFSC.Services.Abstract.Security;
 
 namespace PFSC.WebUI.Controllers
 {
+    [Authorize]
     public class FactoryAdminDashboardController : Controller
     {
         private readonly IFactoryAdminDasboardService _dasboardService;
-        public FactoryAdminDashboardController(IFactoryAdminDasboardService dasboardService)
+        private readonly IPfscAuthenticationService _authService;
+        public FactoryAdminDashboardController(IFactoryAdminDasboardService dasboardService, IPfscAuthenticationService authService)
         {
             this._dasboardService = dasboardService;
+            this._authService = authService;
         }
 
         [Authorize(Roles = "Admin,FactoryAdmin")]
@@ -26,13 +31,25 @@ namespace PFSC.WebUI.Controllers
 
         public IActionResult AdminSummary()
         {
-            return PartialView();
+            var dashboardModel = _dasboardService.BuildDasboardModel(1, User.Identity.Name);
+
+            return PartialView(dashboardModel);
         }
 
+        [HttpGet]
         public IActionResult Profile()
         {
-            return PartialView();
+            var user = this._authService.GetCurrentUserInfo(User.Identity.Name);
+            return PartialView(user);
         }
+
+        [HttpPost]
+        public IActionResult Profile(UserModel usermodel)
+        {
+            var user = _authService.UpdateUser(usermodel, User.Identity.Name);
+            return PartialView(user);
+        }
+
 
         public IActionResult MainTable()
         {
