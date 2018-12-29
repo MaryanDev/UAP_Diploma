@@ -26,6 +26,7 @@ namespace PFSC.WebUI.Controllers
         public IActionResult Index()
         {
             var dashboardModel = _dasboardService.BuildDasboardModel(1, User.Identity.Name);
+            dashboardModel.DashboardUser = _authService.GetCurrentUserInfo(User.Identity.Name);
             return View(dashboardModel);
         }
 
@@ -57,6 +58,11 @@ namespace PFSC.WebUI.Controllers
         }
 
         public IActionResult Map()
+        {
+            return PartialView();
+        }
+
+        public IActionResult Media()
         {
             return PartialView();
         }
