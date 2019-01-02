@@ -12,7 +12,7 @@
     <div class="topLayer">
         <div class="left">
             <div class="content">
-                <h2>Sign Up</h2>
+                <h2>Реєстрація</h2>
                 <form method="post" asp-action="Register">
                     <div class="form-group">
                         <input asp-for="Email" placeholder="username" />
@@ -34,8 +34,8 @@
                         <input asp-for="ConfirmPassword" placeholder="confim password" />
                         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                     </div>
-                    <a asp-controller="Account" asp-action="Login" class="off btn btn-primary">Login</a>
-                    <button id="signUp" type="submit">Sign up</button>
+                    <a asp-controller="Account" asp-action="Login" class="off btn btn-primary">Ввійти</a>
+                    <button id="signUp" type="submit">Реєстрація</button>
                 </form>
             </div>
         </div>

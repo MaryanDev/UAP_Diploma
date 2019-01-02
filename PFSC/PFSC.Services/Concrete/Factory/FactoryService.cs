@@ -176,9 +176,10 @@ namespace PFSC.Services.Concrete.Factory
                 _context.Ratings.Include(r => r.Factory)
                     .GroupBy(r => r.FactoryId)
                     .OrderByDescending(r => r.Average(a => a.RankValue))
-                    .Take(3)
+                    .Take(4)
                     .Select(e => new TopRatedFactoryInfo
                     {
+                        FactoryId = e.Key,
                         Title = _context.Factories.FirstOrDefault(f => f.Id == e.Key).Title,
                         Image = _context.FactoryImages.FirstOrDefault(f => f.FactoryId == e.Key).Path
                     })

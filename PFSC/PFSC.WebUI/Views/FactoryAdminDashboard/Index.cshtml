@@ -1,4 +1,7 @@
 ﻿@model PFSC.Models.FactoryAdminDashboard.DashboardModel
+@{
+    Layout = "_Layout";
+}
 <link href="~/Content/Styles/factoryDahsboard/bootstrap.min.css" rel="stylesheet" />
 <link href="~/Content/Styles/factoryDahsboard/perfect-scrollbar.css" rel="stylesheet" />
 <link href="~/Content/Styles/factoryDahsboard/morris.css" rel="stylesheet" />
@@ -8,10 +11,11 @@
 <link href="~/Content/Styles/factoryDahsboard/default.css" rel="stylesheet" />
 <link href="~/Content/Styles/factoryDahsboard/custom.css" rel="stylesheet" />
 
-<div class="fix-header fix-sidebar card-no-border">
+
+@*<div class="fix-header fix-sidebar card-no-border">*@
     @Html.Partial("Loader")
 
-    <div id="main-wrapper">
+    <div id="main-wrapper" style="margin-top: 50px;">
         @Html.Partial("Header", Model.DashboardUser)
 
         @Html.Partial("LeftSidebar")
@@ -21,7 +25,7 @@
             </div>
             @Html.Partial("Footer")
         </div>
-    </div>
+    @*</div>*@
 
     <script src="~/Scripts/factoryAdminDashboard/libs/perfect-scrollbar.jquery.min.js"></script>
     <script src="~/Scripts/factoryAdminDashboard/libs/bootstrap.min.js"></script>
@@ -35,4 +39,6 @@
     <script src="~/Scripts/factoryAdminDashboard/libs/c3.min.js"></script>
     <script src="~/Scripts/factoryAdminDashboard/libs/dashboard1.js"></script>
     <script src="~/Scripts/factoryAdminDashboard/pages/navigation/navigation.js"></script>
+    <script src="~/Scripts/factoryAdminDashboard/pages/dropzone.js"></script>
+
 </div>

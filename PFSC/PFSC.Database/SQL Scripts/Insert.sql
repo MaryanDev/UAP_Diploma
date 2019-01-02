@@ -303,7 +303,7 @@ insert into Ratings (Id, FactoryId, RankValue, UserId) values (1, 2, 3, 19);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (2, 5, 5, 1);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (3, 1, 2, 12);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (4, 5, 4, 23);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (5, 7, 3, 25);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (5, 2, 5, 25);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (6, 6, 1, 24);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (7, 2, 5, 17);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (8, 6, 2, 29);
@@ -313,7 +313,7 @@ insert into Ratings (Id, FactoryId, RankValue, UserId) values (11, 2, 4, 13);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (12, 2, 1, 14);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (13, 2, 2, 6);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (14, 4, 2, 1);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (15,7, 4, 8);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (15,2, 4, 8);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (16, 2, 2, 22);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (17, 2, 4, 14);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (18, 2, 3, 26);
@@ -329,7 +329,7 @@ insert into Ratings (Id, FactoryId, RankValue, UserId) values (27, 5, 4, 10);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (28, 4, 2, 18);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (29, 5, 4, 25);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (30, 3, 2, 1);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (31, 7, 5, 4);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (31, 7, 1, 4);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (32, 5, 5, 2);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (33, 4, 3, 14);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (34, 5, 3, 29);
@@ -346,9 +346,14 @@ insert into Ratings (Id, FactoryId, RankValue, UserId) values (44, 4, 2, 2);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (45, 4, 1, 4);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (46, 1, 2, 25);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (47, 5, 5, 10);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (48, 7, 5, 7);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (48, 1, 5, 7);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (49, 3, 1, 28);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (50, 7, 4, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (50, 1, 4, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (51, 3, 5, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (52, 3, 5, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (53, 3, 5, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (54, 3, 5, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (55, 3, 5, 19);
 SET IDENTITY_INSERT dbo.Ratings OFF
 
 
@@ -570,12 +575,33 @@ INSERT INTO dbo.FactoryImages
     [Path]
 )
 VALUES
-(1, 1, N''),
-(2, 1, N''),
-(3, 1, N''),
-(4, 1, N''),
-(5, 1, N''),
-(6, 1, N'')
+(1, 1, N'/Content/Images/factory/f1/1.1.jpg'),
+(2, 1, N'/Content/Images/factory/f1/1.2.jpg'),
+(3, 1, N'/Content/Images/factory/f1/1.3.jpg'),
+(4, 1, N'/Content/Images/factory/f1/1.4.jpg'),
+(5, 1, N'/Content/Images/factory/f1/1.5.jpg'),
+(6, 1, N'/Content/Images/factory/f1/1.6.jpg'),
+
+(7, 2, N'/Content/Images/factory/f2/2.1.jpg'),
+(8, 2, N'/Content/Images/factory/f2/2.2.jpg'),
+(9, 2, N'/Content/Images/factory/f2/2.3.jpg'),
+(10, 2, N'/Content/Images/factory/f2/2.4.jpg'),
+(11, 2, N'/Content/Images/factory/f2/2.5.jpg'),
+(12, 2, N'/Content/Images/factory/f2/2.6.jpg'),
+(13, 2, N'/Content/Images/factory/f2/2.7.jpg'),
+
+(14, 3, N'/Content/Images/factory/f3/3.1.jpg'),
+(15, 3, N'/Content/Images/factory/f3/3.2.jpg'),
+(16, 3, N'/Content/Images/factory/f3/3.3.jpg'),
+(17, 3, N'/Content/Images/factory/f3/3.4.jpg'),
+(18, 3, N'/Content/Images/factory/f3/3.5.jpg'),
+(19, 3, N'/Content/Images/factory/f3/3.6.jpg'),
+
+(20, 4, N'/Content/Images/factory/f4/4.1.jpg'),
+(21, 4, N'/Content/Images/factory/f4/4.2.jpg'),
+(31, 4, N'/Content/Images/factory/f4/4.3.jpg'),
+(41, 4, N'/Content/Images/factory/f4/4.4.jpg'),
+(51, 4, N'/Content/Images/factory/f4/4.5.jpg')
 SET IDENTITY_INSERT dbo.FactoryImages OFF
 
 

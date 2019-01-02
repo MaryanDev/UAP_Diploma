@@ -6,7 +6,7 @@
             <p>Адреса: {{factory?.address}}</p>
         </div>
         <mat-tab-group>
-            <mat-tab label="Загальне">
+            <mat-tab label="Загальне" >
                 <div [innerHtml]="factory?.description">
                 </div>
             </mat-tab>
@@ -16,7 +16,7 @@
                 <!--</div>-->
             </mat-tab>
             <mat-tab label="Фото" class="sliderActivator">
-                <!--<div class="current-photo row" style="margin-top: 20px;">
+                <div class="current-photo row" style="margin-top: 20px;">
                     <div *ngFor="let image of factory?.factoryImages">
                         <img class="col-md-6 col-md-push-3" src="{{image}}" />
                     </div>
@@ -33,7 +33,7 @@
                             <h3 class="text-center">Фото відсутні</h3>
                         </div>
                     </ng-template>
-                </div>-->
+                </div>
             </mat-tab>
             <mat-tab label="Відгуки">
                 <div>

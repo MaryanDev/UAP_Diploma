@@ -8,4 +8,17 @@
             </ol>
         </div>
     </div>
+    <div id="dropzone">
+        <form action="/file-upload" class="dropzone1">
+            <div class="fallback">
+                <input name="file" type="file" multiple />
+            </div>
+        </form>
+    </div>
 </div>
+<script src="~/Scripts/factoryAdminDashboard/pages/dropzone.js"></script>
+<script>
+    $(document).ready(function() {
+        $("div.dropzone1").dropzone({ url: "/file/post" });
+    })
+</script>
