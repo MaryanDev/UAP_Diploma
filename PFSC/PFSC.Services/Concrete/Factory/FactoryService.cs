@@ -162,9 +162,11 @@ namespace PFSC.Services.Concrete.Factory
             return (predicate != null
                     ? _context.Employees
                         .Include(r => r.EmployeeMarks)
+                        .Include(r => r.Position)
                         .Where(predicate)
                     : _context.Employees
                         .Include(r => r.EmployeeMarks)
+                        .Include(r => r.Position)
                 )
                 .Select(PfscMappings.EmployeeEntityToModel)
                 .ToList();

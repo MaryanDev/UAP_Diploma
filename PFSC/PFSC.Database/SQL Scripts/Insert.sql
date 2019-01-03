@@ -604,6 +604,68 @@ VALUES
 (51, 4, N'/Content/Images/factory/f4/4.5.jpg')
 SET IDENTITY_INSERT dbo.FactoryImages OFF
 
+SET IDENTITY_INSERT [dbo].[Positions] ON
+INSERT INTO [dbo].[Positions] (Id, [Description])
+VALUES 
+(1, N'Молодший друкар'),
+(2, N'Друкар'),
+(3, N'Старший друкар'),
+(4, N'Менеджер'),
+(5, N'Менеджер по продажам'),
+(6, N'Механік'),
+(7, N'Директор')
+SET IDENTITY_INSERT [dbo].[Positions] OFF
+
+
+SET IDENTITY_INSERT [dbo].[Employees] ON
+INSERT INTO [dbo].[Employees] (Id, DateOfBirth, EndDate, FactoryId, FirstName, LastName, Phone, PositionId, Salary, StartDate, AvatarPath)
+VALUES
+(1, '2016-10-18', NULL, 1,	N'Іван', N'Іваненко', '+38054748493', 1, 5500, '2016-10-18', NULL),
+(2, '2016-10-18', NULL, 1,	N'Петро', N'Гриценко', '+38054748493', 2, 6500, '2016-10-18', NULL),
+(3, '2016-10-18', NULL, 1,	N'Сергій', N'Науменко', '+38054748493', 3, 7500, '2016-10-18', NULL),
+(4, '2016-10-18', NULL, 1,	N'Андрій', N'Кравченко', '+38054748493', 4, 8500, '2016-10-18', NULL),
+(5, '2016-10-18', NULL, 1,	N'Оксана', N'Сович', '+38054748493', 5, 7500, '2016-10-18', NULL),
+(6, '2016-10-18', NULL, 1,	N'Дмитро', N'Гончарук', '+38054748493', 6, 5500, '2016-10-18', NULL),
+(7, '2016-10-18', NULL, 1,	N'Семен', N'Григоренко', '+38054748493', 3, 8500, '2016-10-18', NULL),
+(9, '2016-10-18', NULL, 1,	N'Олег', N'Видорович', '+38054748493', 6, 4500, '2016-10-18', NULL),
+(10, '2016-10-18', NULL, 1, N'Олексій', N'Шевчук', '+38054748493', 7, 9500, '2016-10-18', NULL),
+(11, '2016-10-18', NULL, 1, N'Георгій', N'Семенюк', '+38054748493', 4, 6500, '2016-10-18', NULL),
+(12, '2016-10-18', NULL, 1, N'Іван', N'Сидорович', '+38054748493', 3, 7500, '2016-10-18', NULL),
+(13, '2016-10-18', NULL, 1, N'Микола', N'Ярема', '+38054748493', 1, 3500, '2016-10-18', null)
+SET IDENTITY_INSERT [dbo].[Employees] OFF
+
+SET IDENTITY_INSERT [dbo].[OrderStates] ON
+INSERT INTO [dbo].[OrderStates] (Id, [Status])
+VALUES
+(1, N'Новий'),
+(2, N'Розглянуто'),
+(3, N'В Процесі'),
+(4, N'Виконано'),
+(5, N'Відмінено')
+SET IDENTITY_INSERT [dbo].[OrderStates] OFF
+
+SET IDENTITY_INSERT [dbo].[OrderValues] ON
+INSERT INTO [dbo].[OrderValues](Id, [Value])
+VALUES
+(1, N'Низький пріоритет'),
+(2, N'Середній пріоритет'),
+(3, N'Високий пріоритет'),
+(4, N'Максимальний пріоритет')
+SET IDENTITY_INSERT [dbo].[OrderValues] OFF
+
+SET IDENTITY_INSERT [dbo].[Orders] ON
+INSERT INTO [dbo].[Orders] (Id, CompletedDate, CreatedDate, CustormerPhone, [Description], EmployeeId, FactoryId, IsCompleted, OrderStateId, OrderValueId, Price, CustomerName)
+VALUES
+(1, '2016-10-18', '2016-10-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(2, '2016-10-18', '2016-10-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(3, '2016-10-18', '2016-10-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(4, '2016-10-18', '2016-10-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(5, '2016-10-18', '2016-10-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(6, '2016-10-18', '2016-10-18', '+38054748493', N'Замовлення паковань.', null, 1, 0, 1, 2, 210, N'Петро Іванович')
+SET IDENTITY_INSERT [dbo].[Orders] OFF
+
+
+
 
 
 

@@ -13,6 +13,16 @@ DELETE FROM dbo.Ratings
 
 DELETE FROM dbo.Reviews
 
+DELETE FROM dbo.Positions
+
+DELETE FROM [dbo].[Orders]
+
+DELETE FROM [dbo].[OrderValues]
+
+DELETE FROM [dbo].[OrderStates]
+
+DELETE FROM dbo.Employees
+
 DELETE FROM dbo.Factories
 
 DELETE FROM dbo.ReviewResults
@@ -30,3 +40,4 @@ DELETE FROM dbo.PrintingProductions
 DELETE FROM dbo.PrintingTechnologies
 
 DELETE FROM dbo.Roles
+
