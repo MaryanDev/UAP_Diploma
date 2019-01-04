@@ -202,5 +202,22 @@ namespace PFSC.Services.Concrete.Factory
 
             return topRated;
         }
+
+        public Dictionary<int, int> GetRatings(int factoryId)
+        {
+            var ratings =
+                _context.Factories.Include("Ratings").FirstOrDefault(f => f.Id == factoryId)
+                    .Ratings.GroupBy(r => r.RankValue)
+                    .ToDictionary(g => Convert.ToInt32(g.Key), g => g.Count());
+            return ratings;
+        }
+
+        public Dictionary<DateTime, int> GetOrdersByDate(int factoryId)
+        {
+            var orders = _context.Factories.Include("Orders").FirstOrDefault(f => f.Id == factoryId)
+                .Orders.GroupBy(o => o.CreatedDate/*.Month*/)
+                .ToDictionary(g => /*Convert.ToInt32(g.Key)*/g.Key, g => g.Count());
+            return orders;
+        }
     }
 }

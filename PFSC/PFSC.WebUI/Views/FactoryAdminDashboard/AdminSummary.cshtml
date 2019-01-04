@@ -20,18 +20,22 @@
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex no-block">
+
                         <div>
                             <h5 class="card-title m-b-0">Графіки</h5>
                         </div>
-                        <div class="ml-auto">
-                            <ul class="list-inline text-center font-12">
-                                <li><i class="fa fa-circle text-success"></i> SITE A</li>
-                                <li><i class="fa fa-circle text-info"></i> SITE B</li>
-                                <li><i class="fa fa-circle text-primary"></i> SITE C</li>
-                            </ul>
+                        <div id="lineChart" style="height: 350px; width: 100%;">
+
                         </div>
+                        @*<div class="ml-auto">
+                                <ul class="list-inline text-center font-12">
+                                    <li><i class="fa fa-circle text-success"></i> SITE A</li>
+                                    <li><i class="fa fa-circle text-info"></i> SITE B</li>
+                                    <li><i class="fa fa-circle text-primary"></i> SITE C</li>
+                                </ul>
+                            </div>*@
                     </div>
-                    <div class="" id="sales-chart" style="height: 355px;"></div>
+                    @*<div class="" id="sales-chart" style="height: 355px;"></div>*@
                 </div>
             </div>
         </div>
@@ -40,19 +44,20 @@
                 <div class="card-body">
                     <div class="d-flex m-b-30 no-block">
                         <h5 class="card-title m-b-0 align-self-center">Відгуки</h5>
-                        <div class="ml-auto">
-                            <select class="custom-select b-0">
-                                <option selected="">Today</option>
-                                <option value="1">Tomorrow</option>
-                            </select>
-                        </div>
+                        <div id="pieChartContainer" style="height: 350px; width: 100%;"></div>
+                        @*<div class="ml-auto">
+                                <select class="custom-select b-0">
+                                    <option selected="">Today</option>
+                                    <option value="1">Tomorrow</option>
+                                </select>
+                            </div>*@
                     </div>
-                    <div id="visitor" style="height:260px; width:100%;"></div>
-                    <ul class="list-inline m-t-30 text-center font-12">
-                        <li><i class="fa fa-circle text-purple"></i> Tablet</li>
-                        <li><i class="fa fa-circle text-success"></i> Desktops</li>
-                        <li><i class="fa fa-circle text-info"></i> Mobile</li>
-                    </ul>
+                    @*<div id="visitor" style="height:260px; width:100%;"></div>*@
+                    @*<ul class="list-inline m-t-30 text-center font-12">
+                            <li><i class="fa fa-circle text-purple"></i> Tablet</li>
+                            <li><i class="fa fa-circle text-success"></i> Desktops</li>
+                            <li><i class="fa fa-circle text-info"></i> Mobile</li>
+                        </ul>*@
                 </div>
             </div>
         </div>
@@ -223,3 +228,102 @@
     </div>
 
 </div>
+
+<script>
+    $(document).ready(function () {
+        var ratings = [];
+        var orders = [];
+
+        $.ajax({
+            url: '/Factory/GetFactoryRatings',
+            type: 'GET',
+            contentType: 'application/json; charset=utf-8',
+            data: { 'factoryId': 1 },
+            cache: false,
+            success: function (result) {
+                console.log(result);
+                ratings = result;
+
+
+                var options = {
+                    title: {
+                        text: "Оцінки Компанії"
+                    },
+                    data: [{
+                        type: "pie",
+                        startAngle: 45,
+                        showInLegend: "true",
+                        legendText: "{label}",
+                        indexLabel: "{label} ({y})",
+                        yValueFormatString: "#,##0.#" % "",
+                        dataPoints: [
+                            { label: "1 зірка", y: ratings["1"] },
+                            { label: "2 зірки", y: ratings["2"] },
+                            { label: "3 зірки", y: ratings["3"] },
+                            { label: "4 зірки", y: ratings["4"] },
+                            { label: "5 зірок", y: ratings["5"] }
+                        ]
+                    }]
+                };
+
+                $("#pieChartContainer").CanvasJSChart(options);
+            },
+            error: function (result) {
+            }
+        });
+
+        $.ajax({
+            url: '/Factory/GetFactoryOrders',
+            type: 'GET',
+            contentType: 'application/json; charset=utf-8',
+            data: { 'factoryId': 1 },
+            cache: false,
+            success: function (result) {
+                console.log(result);
+                
+                $.each(result, function (key, value) {
+                    console.log(key + ": " + value);
+                    orders.push({ x: new Date(key), y: value });
+                });
+
+                var options = {
+                    animationEnabled: true,
+                    title: {
+                        text: "Замовлення 2016 року"
+                    },
+                    axisX: {
+                        valueFormatString: "MMM"
+                    },
+                    axisY: {
+                        title: "Кількість замовлень",
+                        //prefix: "$",
+                        includeZero: false
+                    },
+                    data: [{
+                        yValueFormatString: "#",
+                        xValueFormatString: "MMMM",
+                        type: "spline",
+                        dataPoints:orders
+                        //    [
+                        //    { x: new Date(2017, 0), y: 25060 },
+                        //    { x: new Date(2017, 1), y: 27980 },
+                        //    { x: new Date(2017, 2), y: 33800 },
+                        //    { x: new Date(2017, 3), y: 49400 },
+                        //    { x: new Date(2017, 4), y: 40260 },
+                        //    { x: new Date(2017, 5), y: 33900 },
+                        //    { x: new Date(2017, 6), y: 48000 },
+                        //    { x: new Date(2017, 7), y: 31500 },
+                        //    { x: new Date(2017, 8), y: 32300 },
+                        //    { x: new Date(2017, 9), y: 42000 },
+                        //    { x: new Date(2017, 10), y: 52160 },
+                        //    { x: new Date(2017, 11), y: 49400 }
+                        //]
+                    }]
+                };
+
+                $("#lineChart").CanvasJSChart(options);
+            }
+        });
+    })
+</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>

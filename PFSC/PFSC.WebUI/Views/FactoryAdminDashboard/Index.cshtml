@@ -4,7 +4,7 @@
 }
 <link href="~/Content/Styles/factoryDahsboard/bootstrap.min.css" rel="stylesheet" />
 <link href="~/Content/Styles/factoryDahsboard/perfect-scrollbar.css" rel="stylesheet" />
-<link href="~/Content/Styles/factoryDahsboard/morris.css" rel="stylesheet" />
+@*<link href="~/Content/Styles/factoryDahsboard/morris.css" rel="stylesheet" />*@
 <link href="~/Content/Styles/factoryDahsboard/c3.min.css" rel="stylesheet" />
 <link href="~/Content/Styles/factoryDahsboard/style.css" rel="stylesheet" />
 <link href="~/Content/Styles/factoryDahsboard/dashboard1.css" rel="stylesheet" />
@@ -15,16 +15,17 @@
 @*<div class="fix-header fix-sidebar card-no-border">*@
     @Html.Partial("Loader")
 
-    <div id="main-wrapper" style="margin-top: 50px;">
-        @Html.Partial("Header", Model.DashboardUser)
+<div id="main-wrapper" style="margin-top: 50px;">
+    @Html.Partial("Header", Model.DashboardUser)
 
-        @Html.Partial("LeftSidebar")
-        <div class="page-wrapper">
-            <div id="maindDashboardContainer">
-                @Html.Partial("AdminSummary")
-            </div>
-            @Html.Partial("Footer")
+    @Html.Partial("LeftSidebar")
+    <div class="page-wrapper">
+        <div id="maindDashboardContainer">
+            @Html.Partial("AdminSummary")
         </div>
+        @Html.Partial("Footer")
+    </div>
+    @Html.Partial("Dialog")
     @*</div>*@
 
     <script src="~/Scripts/factoryAdminDashboard/libs/perfect-scrollbar.jquery.min.js"></script>

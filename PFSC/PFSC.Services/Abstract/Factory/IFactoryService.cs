@@ -16,5 +16,7 @@ namespace PFSC.Services.Abstract.Factory
         List<OrderModel> GetOrders(Func<Order, bool> predicate = null);
         List<MachineModel> GetMachines(Func<Machine, bool> predicate = null);
         List<EmployeeModel> GetEmployees(Func<Employee, bool> predicate = null);
+        Dictionary<int, int> GetRatings(int factoryId);
+        Dictionary<DateTime, int> GetOrdersByDate(int factoryId);
     }
 }
