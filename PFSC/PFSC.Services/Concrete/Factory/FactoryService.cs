@@ -162,9 +162,11 @@ namespace PFSC.Services.Concrete.Factory
             return (predicate != null
                     ? _context.Employees
                         .Include(r => r.EmployeeMarks)
+                        .Include(r => r.Position)
                         .Where(predicate)
                     : _context.Employees
                         .Include(r => r.EmployeeMarks)
+                        .Include(r => r.Position)
                 )
                 .Select(PfscMappings.EmployeeEntityToModel)
                 .ToList();
@@ -176,9 +178,10 @@ namespace PFSC.Services.Concrete.Factory
                 _context.Ratings.Include(r => r.Factory)
                     .GroupBy(r => r.FactoryId)
                     .OrderByDescending(r => r.Average(a => a.RankValue))
-                    .Take(3)
+                    .Take(4)
                     .Select(e => new TopRatedFactoryInfo
                     {
+                        FactoryId = e.Key,
                         Title = _context.Factories.FirstOrDefault(f => f.Id == e.Key).Title,
                         Image = _context.FactoryImages.FirstOrDefault(f => f.FactoryId == e.Key).Path
                     })
@@ -198,6 +201,23 @@ namespace PFSC.Services.Concrete.Factory
             //return topRated1.Take(4).ToList();
 
             return topRated;
+        }
+
+        public Dictionary<int, int> GetRatings(int factoryId)
+        {
+            var ratings =
+                _context.Factories.Include("Ratings").FirstOrDefault(f => f.Id == factoryId)
+                    .Ratings.GroupBy(r => r.RankValue)
+                    .ToDictionary(g => Convert.ToInt32(g.Key), g => g.Count());
+            return ratings;
+        }
+
+        public Dictionary<DateTime, int> GetOrdersByDate(int factoryId)
+        {
+            var orders = _context.Factories.Include("Orders").FirstOrDefault(f => f.Id == factoryId)
+                .Orders.GroupBy(o => o.CreatedDate/*.Month*/)
+                .ToDictionary(g => /*Convert.ToInt32(g.Key)*/g.Key, g => g.Count());
+            return orders;
         }
     }
 }

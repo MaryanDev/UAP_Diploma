@@ -11,7 +11,7 @@
     <div class="topLayer">
         <div class="right">
             <div class="content">
-                <h2>Login</h2>
+                <h2>Вхід</h2>
                 <form method="post" asp-action="Login">
                     <div class="form-group">
                         <input asp-for="LoginName" placeholder="username" />
@@ -21,8 +21,8 @@
                         <input asp-for="Password" placeholder="password" />
                         <span class="text-danger" asp-validation-for="Password"></span>
                     </div>
-                    <a asp-controller="Account" asp-action="Register" class="off btn btn-primary">Sign Up</a>
-                    <button id="login" type="submit">Login</button>
+                    <a asp-controller="Account" asp-action="Register" class="off btn btn-primary">Реєстрація</a>
+                    <button id="login" type="submit">Ввійти</button>
                 </form>
             </div>
         </div>

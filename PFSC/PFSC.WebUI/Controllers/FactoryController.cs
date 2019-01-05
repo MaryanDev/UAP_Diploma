@@ -20,5 +20,16 @@ namespace PFSC.WebUI.Controllers
             var factory = _factoryService.GetFullFactoryInfo(factoryId);
             return Json(factory);
         }
+
+        public JsonResult GetFactoryRatings(int factoryId)
+        {
+            var ratings = _factoryService.GetRatings(factoryId);
+            return Json(ratings);
+        }
+        public JsonResult GetFactoryOrders(int factoryId)
+        {
+            var orders = _factoryService.GetOrdersByDate(factoryId);
+            return Json(orders);
+        }
     }
 }

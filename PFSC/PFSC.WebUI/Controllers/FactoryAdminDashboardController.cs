@@ -54,7 +54,8 @@ namespace PFSC.WebUI.Controllers
 
         public IActionResult MainTable()
         {
-            return PartialView();
+            var machines = _dasboardService.BuildDasboardModel(1, User.Identity.Name).PrintingMachines;
+            return PartialView(machines);
         }
 
         public IActionResult Map()

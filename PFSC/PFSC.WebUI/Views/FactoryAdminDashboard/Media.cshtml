@@ -1,4 +1,27 @@
-﻿<div class="container-fluid">
+﻿<style>
+
+    .dropzone {
+        border: 2px dashed #0087F7;
+        border-radius: 5px;
+        background: white;
+    }
+
+        .dropzone .dz-message {
+            font-weight: 400;
+        }
+
+            .dropzone .dz-message .note {
+                font-size: 0.8em;
+                font-weight: 200;
+                display: block;
+                margin-top: 1.4rem;
+            }
+
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }    
+</style>
+<div class="container-fluid">
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
             <h3 class="text-themecolor">Медіа</h3>
@@ -8,4 +31,17 @@
             </ol>
         </div>
     </div>
+    <div id="dropzone">
+        <form action="/file-upload" class="dropzone">
+            <div class="fallback">
+                <input name="file" type="file" multiple />
+            </div>
+        </form>
+    </div>
 </div>
+<script src="~/Scripts/factoryAdminDashboard/pages/dropzone.js"></script>
+<script>
+    $(document).ready(function() {
+        $("div.dropzone1").dropzone({ url: "/file/post" });
+    })
+</script>

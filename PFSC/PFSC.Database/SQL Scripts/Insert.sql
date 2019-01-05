@@ -303,7 +303,7 @@ insert into Ratings (Id, FactoryId, RankValue, UserId) values (1, 2, 3, 19);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (2, 5, 5, 1);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (3, 1, 2, 12);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (4, 5, 4, 23);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (5, 7, 3, 25);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (5, 2, 5, 25);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (6, 6, 1, 24);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (7, 2, 5, 17);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (8, 6, 2, 29);
@@ -313,7 +313,7 @@ insert into Ratings (Id, FactoryId, RankValue, UserId) values (11, 2, 4, 13);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (12, 2, 1, 14);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (13, 2, 2, 6);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (14, 4, 2, 1);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (15,7, 4, 8);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (15,2, 4, 8);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (16, 2, 2, 22);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (17, 2, 4, 14);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (18, 2, 3, 26);
@@ -329,7 +329,7 @@ insert into Ratings (Id, FactoryId, RankValue, UserId) values (27, 5, 4, 10);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (28, 4, 2, 18);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (29, 5, 4, 25);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (30, 3, 2, 1);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (31, 7, 5, 4);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (31, 7, 1, 4);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (32, 5, 5, 2);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (33, 4, 3, 14);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (34, 5, 3, 29);
@@ -346,9 +346,14 @@ insert into Ratings (Id, FactoryId, RankValue, UserId) values (44, 4, 2, 2);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (45, 4, 1, 4);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (46, 1, 2, 25);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (47, 5, 5, 10);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (48, 7, 5, 7);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (48, 1, 5, 7);
 insert into Ratings (Id, FactoryId, RankValue, UserId) values (49, 3, 1, 28);
-insert into Ratings (Id, FactoryId, RankValue, UserId) values (50, 7, 4, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (50, 1, 4, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (51, 3, 5, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (52, 3, 5, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (53, 3, 5, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (54, 3, 5, 19);
+insert into Ratings (Id, FactoryId, RankValue, UserId) values (55, 3, 5, 19);
 SET IDENTITY_INSERT dbo.Ratings OFF
 
 
@@ -570,13 +575,100 @@ INSERT INTO dbo.FactoryImages
     [Path]
 )
 VALUES
-(1, 1, N''),
-(2, 1, N''),
-(3, 1, N''),
-(4, 1, N''),
-(5, 1, N''),
-(6, 1, N'')
+(1, 1, N'/Content/Images/factory/f1/1.1.jpg'),
+(2, 1, N'/Content/Images/factory/f1/1.2.jpg'),
+(3, 1, N'/Content/Images/factory/f1/1.3.jpg'),
+(4, 1, N'/Content/Images/factory/f1/1.4.jpg'),
+(5, 1, N'/Content/Images/factory/f1/1.5.jpg'),
+(6, 1, N'/Content/Images/factory/f1/1.6.jpg'),
+
+(7, 2, N'/Content/Images/factory/f2/2.1.jpg'),
+(8, 2, N'/Content/Images/factory/f2/2.2.jpg'),
+(9, 2, N'/Content/Images/factory/f2/2.3.jpg'),
+(10, 2, N'/Content/Images/factory/f2/2.4.jpg'),
+(11, 2, N'/Content/Images/factory/f2/2.5.jpg'),
+(12, 2, N'/Content/Images/factory/f2/2.6.jpg'),
+(13, 2, N'/Content/Images/factory/f2/2.7.jpg'),
+
+(14, 3, N'/Content/Images/factory/f3/3.1.jpg'),
+(15, 3, N'/Content/Images/factory/f3/3.2.jpg'),
+(16, 3, N'/Content/Images/factory/f3/3.3.jpg'),
+(17, 3, N'/Content/Images/factory/f3/3.4.jpg'),
+(18, 3, N'/Content/Images/factory/f3/3.5.jpg'),
+(19, 3, N'/Content/Images/factory/f3/3.6.jpg'),
+
+(20, 4, N'/Content/Images/factory/f4/4.1.jpg'),
+(21, 4, N'/Content/Images/factory/f4/4.2.jpg'),
+(31, 4, N'/Content/Images/factory/f4/4.3.jpg'),
+(41, 4, N'/Content/Images/factory/f4/4.4.jpg'),
+(51, 4, N'/Content/Images/factory/f4/4.5.jpg')
 SET IDENTITY_INSERT dbo.FactoryImages OFF
+
+SET IDENTITY_INSERT [dbo].[Positions] ON
+INSERT INTO [dbo].[Positions] (Id, [Description])
+VALUES 
+(1, N'Молодший друкар'),
+(2, N'Друкар'),
+(3, N'Старший друкар'),
+(4, N'Менеджер'),
+(5, N'Менеджер по продажам'),
+(6, N'Механік'),
+(7, N'Директор')
+SET IDENTITY_INSERT [dbo].[Positions] OFF
+
+
+SET IDENTITY_INSERT [dbo].[Employees] ON
+INSERT INTO [dbo].[Employees] (Id, DateOfBirth, EndDate, FactoryId, FirstName, LastName, Phone, PositionId, Salary, StartDate, AvatarPath)
+VALUES
+(1, '2016-10-18', NULL, 1,	N'Іван', N'Іваненко', '+38054748493', 1, 5500, '2016-10-18', NULL),
+(2, '2016-10-18', NULL, 1,	N'Петро', N'Гриценко', '+38054748493', 2, 6500, '2016-10-18', NULL),
+(3, '2016-10-18', NULL, 1,	N'Сергій', N'Науменко', '+38054748493', 3, 7500, '2016-10-18', NULL),
+(4, '2016-10-18', NULL, 1,	N'Андрій', N'Кравченко', '+38054748493', 4, 8500, '2016-10-18', NULL),
+(5, '2016-10-18', NULL, 1,	N'Оксана', N'Сович', '+38054748493', 5, 7500, '2016-10-18', NULL),
+(6, '2016-10-18', NULL, 1,	N'Дмитро', N'Гончарук', '+38054748493', 6, 5500, '2016-10-18', NULL),
+(7, '2016-10-18', NULL, 1,	N'Семен', N'Григоренко', '+38054748493', 3, 8500, '2016-10-18', NULL),
+(9, '2016-10-18', NULL, 1,	N'Олег', N'Видорович', '+38054748493', 6, 4500, '2016-10-18', NULL),
+(10, '2016-10-18', NULL, 1, N'Олексій', N'Шевчук', '+38054748493', 7, 9500, '2016-10-18', NULL),
+(11, '2016-10-18', NULL, 1, N'Георгій', N'Семенюк', '+38054748493', 4, 6500, '2016-10-18', NULL),
+(12, '2016-10-18', NULL, 1, N'Іван', N'Сидорович', '+38054748493', 3, 7500, '2016-10-18', NULL),
+(13, '2016-10-18', NULL, 1, N'Микола', N'Ярема', '+38054748493', 1, 3500, '2016-10-18', null)
+SET IDENTITY_INSERT [dbo].[Employees] OFF
+
+SET IDENTITY_INSERT [dbo].[OrderStates] ON
+INSERT INTO [dbo].[OrderStates] (Id, [Status])
+VALUES
+(1, N'Новий'),
+(2, N'Розглянуто'),
+(3, N'В Процесі'),
+(4, N'Виконано'),
+(5, N'Відмінено')
+SET IDENTITY_INSERT [dbo].[OrderStates] OFF
+
+SET IDENTITY_INSERT [dbo].[OrderValues] ON
+INSERT INTO [dbo].[OrderValues](Id, [Value])
+VALUES
+(1, N'Низький пріоритет'),
+(2, N'Середній пріоритет'),
+(3, N'Високий пріоритет'),
+(4, N'Максимальний пріоритет')
+SET IDENTITY_INSERT [dbo].[OrderValues] OFF
+
+SET IDENTITY_INSERT [dbo].[Orders] ON
+INSERT INTO [dbo].[Orders] (Id, CompletedDate, CreatedDate, CustormerPhone, [Description], EmployeeId, FactoryId, IsCompleted, OrderStateId, OrderValueId, Price, CustomerName)
+VALUES
+(1, '2016-10-18', '2016-10-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(2, '2016-10-18', '2016-9-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(3, '2016-10-18', '2016-8-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(4, '2016-10-18', '2016-7-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(5, '2016-10-18', '2016-6-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(6, '2016-10-18', '2016-5-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(7, '2016-10-18', '2016-5-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(8, '2016-10-18', '2016-8-18', '+38054748493', N'Замовлення паковань.', NULL, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(9, '2016-10-18', '2016-1-18', '+38054748493', N'Замовлення паковань.', null, 1, 0, 1, 2, 210, N'Петро Іванович'),
+(10, '2016-10-18', '2016-1-18', '+38054748493', N'Замовлення паковань.', null, 1, 0, 1, 2, 210, N'Петро Іванович')
+SET IDENTITY_INSERT [dbo].[Orders] OFF
+
+
 
 
 
