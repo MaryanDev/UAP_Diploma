@@ -6,10 +6,15 @@
         <a href="@Url.Action("Index", "Search")" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Пошук</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Новини</a>
         <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Контакти</a>
-        @if (User.Identity.IsAuthenticated)
-        {
+        <div class="text-right" style="float:right;">
             <a href="@Url.Action("Index", "FactoryAdminDashboard")" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Адмін панель</a>
-            <a href="@Url.Action("Logout", "Account")" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Вийти</a>
-        }
+
+            @if (User.Identity.IsAuthenticated)
+            {
+
+                <a href="@Url.Action("Logout", "Account")" class="w3-bar-item w3-button w3-hide-small w3-hide-medium w3-hover-white">Вийти</a>
+
+            }
+        </div>
     </div>
 </div>
