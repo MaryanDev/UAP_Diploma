@@ -249,6 +249,7 @@
     <Folder Include="wwwroot\Content\Images\factory\f3\" />
     <Folder Include="wwwroot\Content\Images\factory\f4\" />
     <Folder Include="wwwroot\Content\Images\employee\" />
+    <Folder Include="wwwroot\Scripts\factoryAdminDashboard\slick\" />
   </ItemGroup>
 
   <ItemGroup>

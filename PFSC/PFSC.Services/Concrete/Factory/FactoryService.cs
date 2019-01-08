@@ -108,8 +108,10 @@ namespace PFSC.Services.Concrete.Factory
             return (predicate != null
                     ? _context.Machines
                         .Include(m => m.Manufacturer)
+                        .Include(m => m.Factories)
                         .Where(predicate)
                     : _context.Machines
+                        .Include(m => m.Factories)
                         .Include(m => m.Manufacturer)
                 )
                 .Select(PfscMappings.MachineEntityToModel)
@@ -218,6 +220,12 @@ namespace PFSC.Services.Concrete.Factory
                 .Orders.GroupBy(o => o.CreatedDate/*.Month*/)
                 .ToDictionary(g => /*Convert.ToInt32(g.Key)*/g.Key, g => g.Count());
             return orders;
+        }
+
+        public List<string> GetPhotos(int factoryId)
+        {
+            var photos = _context.Factories.Include(f => f.FactoryImages).FirstOrDefault(x => x.Id == factoryId).FactoryImages.Select(i => i.Path).ToList();
+            return photos;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿<style>
+﻿@model List<string>
+<style>
 
     .dropzone {
         border: 2px dashed #0087F7;
@@ -19,8 +20,14 @@
 
     *, *:before, *:after {
         box-sizing: border-box;
-    }    
+    }
+
+    .slick-slide{
+        margin:5px;
+    }
 </style>
+<link href="~/Scripts/factoryAdminDashboard/slick/slick.css" rel="stylesheet" />
+<link href="~/Scripts/factoryAdminDashboard/slick/slick-theme.css" rel="stylesheet" />
 <div class="container-fluid">
     <div class="row page-titles">
         <div class="col-md-5 align-self-center">
@@ -31,17 +38,59 @@
             </ol>
         </div>
     </div>
-    <div id="dropzone">
-        <form action="/file-upload" class="dropzone">
-            <div class="fallback">
-                <input name="file" type="file" multiple />
+    <div >
+        @*<form action="/file-upload" class="dropzone">
+                <div class="fallback">
+                    <input name="file" type="file" multiple />
+                </div>
+            </form>*@
+        <div style="text-align:center; margin:15px;">
+            <div id="currentImage" style="width:500px;  margin:auto">
+                @foreach (var imagePath in Model)
+                {
+                    <img src="@imagePath" />
+                }
             </div>
-        </form>
+        </div>
+        <div id="imageviewer" style="margin-top:20px;">
+            @foreach (var imagePath in Model)
+            {
+
+                <div class="imageWrapper" style="margin:5px;">
+                    <img src="@imagePath" style="margin:5px;"/>
+                </div>
+            }
+        </div>
     </div>
 </div>
-<script src="~/Scripts/factoryAdminDashboard/pages/dropzone.js"></script>
+@*<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>*@
+<script src="~/Scripts/factoryAdminDashboard/slick/slick.js"></script>
 <script>
-    $(document).ready(function() {
-        $("div.dropzone1").dropzone({ url: "/file/post" });
+    $(document).ready(function () {
+        $('#currentImage').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            //asNavFor: '#imageviewer'
+        });
+
+        $('#imageviewer').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            asNavFor: '#currentImage',
+            dots: true,
+            centerMode: true,
+            focusOnSelect: true
+        });
     })
+
 </script>
+@*<script src="~/Scripts/factoryAdminDashboard/pages/dropzone.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("div.dropzone1").dropzone({ url: "/file/post" });
+        })
+    </script>*@

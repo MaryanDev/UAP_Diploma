@@ -65,7 +65,8 @@ namespace PFSC.WebUI.Controllers
 
         public IActionResult Media()
         {
-            return PartialView();
+            var photos = _dasboardService.BuildDasboardModel(1, User.Identity.Name).FactoryPhotos;
+            return PartialView(photos);
         }
     }
 }
