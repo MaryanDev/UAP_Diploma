@@ -8,6 +8,7 @@ namespace PFSC.Models.FactoryAdminDashboard
 {
     public class DashboardModel
     {
+        public string FactoryName { get;set; }
         public UserModel DashboardUser { get; set; }                            
         public List<EmployeeModel> Employees { get; set; }
         public List<MachineModel> PrintingMachines { get; set; }

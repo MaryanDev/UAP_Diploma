@@ -27,6 +27,7 @@ namespace PFSC.WebUI.Controllers
         {
             var dashboardModel = _dasboardService.BuildDasboardModel(1, User.Identity.Name);
             dashboardModel.DashboardUser = _authService.GetCurrentUserInfo(User.Identity.Name);
+            ViewBag.FactoryName = dashboardModel.FactoryName;
             return View(dashboardModel);
         }
 

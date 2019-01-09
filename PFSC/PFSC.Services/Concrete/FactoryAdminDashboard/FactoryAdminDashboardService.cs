@@ -31,6 +31,7 @@ namespace PFSC.Services.Concrete.FactoryAdminDashboard
             {
                 dashboardModel = new DashboardModel
                 {
+                    FactoryName = factory.Title,
                     Reviews = _factoryService.GetReviews(r => r.FactoryId == factoryId),
                     PrintingMachines =
                     _factoryService.GetMachines(m => m.Factories.Select(f => f.FactoryId).Contains(factoryId)),
